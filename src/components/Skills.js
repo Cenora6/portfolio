@@ -4,7 +4,9 @@ class Skills extends Component {
 
     render() {
         return (
-            <div>my skills</div>
+            <section className='skills'>
+
+            </section>
         )
     }
 }

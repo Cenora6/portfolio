@@ -4,7 +4,9 @@ class About extends Component {
 
     render() {
         return (
-            <div>about me</div>
+            <section className='about'>
+
+            </section>
         )
     }
 }

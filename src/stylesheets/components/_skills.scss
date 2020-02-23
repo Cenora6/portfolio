@@ -1,0 +1,16 @@
+.skills {
+  @include base;
+  background-color: #3F196A;
+
+  &:before, &:after {
+    background: url("./../../assets/background_skills.svg") no-repeat;
+  }
+
+  &:before {
+    @include before;
+  }
+
+  &:after {
+    @include after;
+  }
+}

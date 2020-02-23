@@ -1,0 +1,28 @@
+@mixin base {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  width: 100%;
+  background-size: cover;
+}
+
+@mixin after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 50%;
+  transform: rotate(180deg);
+  background-size: contain;
+}

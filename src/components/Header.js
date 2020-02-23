@@ -14,6 +14,10 @@ class Header extends Component {
         });
     };
 
+    toContact = () => {
+
+    }
+
     render() {
 
         const linkStyle = {
@@ -29,7 +33,7 @@ class Header extends Component {
                 </div>
                 <div className='header_arrows'>
                     <NavLink style={linkStyle} to={'/contact'}>
-                        <div className='header_arrows_top'>
+                        <div className='header_arrows_top' onClick={this.toContact}>
                             <i className="fas fa-angle-double-up" id='top'
                                onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
                             <span className={this.state.hover && this.state.title === "top" ? "shown" : "hidden"}>Contact</span>
@@ -49,7 +53,7 @@ class Header extends Component {
                                onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
                         </div>
                     </NavLink>
-                    <NavLink style={linkStyle} to={'/contact'}>
+                    <NavLink style={linkStyle} to={'/projects'}>
                         <div className='header_arrows_right'>
                             <span className={this.state.hover && this.state.title === "right" ? "shown" : "hidden"}>My projects</span>
                             <i className="fas fa-angle-double-right" id='right'
