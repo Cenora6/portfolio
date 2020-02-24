@@ -1,6 +1,9 @@
 .header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
 
   &_title {
     z-index: 10;
@@ -66,8 +69,7 @@
           background-size: cover;
           opacity: 0.3;
           filter: grayscale(100%);
-          border-bottom: 0.1rem double #FFF;
-          border-right: 0.1rem double #FFF;
+          border: 0.1rem double #FFF;
         }
 
         span {
@@ -109,7 +111,7 @@
     background-size: cover;
     transition: 2s;
     opacity: 1;
-    filter: grayscale(0%);
+    filter: grayscale(50%);
   }
 
   span {
