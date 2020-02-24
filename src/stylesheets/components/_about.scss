@@ -1,16 +1,4 @@
 .about {
-  @include base;
-  background-color: #652060;
 
-  &:before, &:after {
-    background: url("./../../assets/background_aboutme.svg") no-repeat;
-  }
 
-  &:before {
-    @include before;
-  }
-
-  &:after {
-    @include after;
-  }
 }

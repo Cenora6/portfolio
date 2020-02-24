@@ -18,6 +18,8 @@ h1, h2, h3, h4 {
   margin-top: 1rem;
   padding-top: 1rem;
   line-height: 1.25;
+  z-index: 10;
+  color: #FFF;
   text-shadow: 2px 2px 0 #272727, 4px 4px 0 #000000;
 }
 
@@ -35,4 +37,41 @@ h3 {
 
 h4 {
   font-size: 1rem;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #652060;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    background: url("./../../assets/background_aboutme.svg") no-repeat;
+  }
+
+  &:before {
+    width: 100%;
+    background-size: cover;
+  }
+  &:after {
+    left: 0;
+    top: 0;
+    width: 50%;
+    transform: rotate(180deg);
+    background-size: contain;
+  }
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
 }

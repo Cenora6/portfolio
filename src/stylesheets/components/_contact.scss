@@ -1,16 +1,4 @@
 .contact {
-  @include base;
-  background-color: #151A80;
 
-  &:before, &:after {
-    background: url("./../../assets/background_contact.svg") no-repeat;
-  }
 
-  &:before {
-    @include before;
-  }
-
-  &:after {
-    @include after;
-  }
 }

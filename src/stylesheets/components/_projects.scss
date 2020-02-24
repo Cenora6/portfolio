@@ -1,16 +1,4 @@
 .projects {
-  @include base;
-  background-color: #F1DADF;
 
-  &:before, &:after {
-    background: url("./../../assets/background_projects.svg") no-repeat;
-  }
 
-  &:before {
-    @include before;
-  }
-
-  &:after {
-    @include after;
-  }
 }

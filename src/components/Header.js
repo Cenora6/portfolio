@@ -1,65 +1,47 @@
 import React, {Component} from 'react';
-import {NavLink} from "react-router-dom";
 
 class Header extends Component {
     state = {
         hover: false,
-        title: "",
+        link: "",
     };
 
-    toggleHoverTop = (e) => {
+    toggleHover = (e) => {
         this.setState({
             hover: !this.state.hover,
-            title: e.target.id,
-        });
+            link: e.target.id,
+        })
     };
 
-    toContact = () => {
-
-    }
-
     render() {
-
-        const linkStyle = {
-            color: "#FFF",
-            textDecoration: "none",
-        };
+        console.log(this.state.link, this.state.hover)
 
         return (
             <section className='header'>
                 <div className='header_title'>
                     <h1>Aleksandra Gasidlo</h1>
-                    <p>Portfolio</p>
+                    <p>
+                        <i className="fas fa-vial"></i> Medical Laboratory Scientist.
+                    </p>
+                    <p>
+                        <i className="fas fa-code"></i> Front-end Developer.
+                    </p>
                 </div>
-                <div className='header_arrows'>
-                    <NavLink style={linkStyle} to={'/contact'}>
-                        <div className='header_arrows_top' onClick={this.toContact}>
-                            <i className="fas fa-angle-double-up" id='top'
-                               onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
-                            <span className={this.state.hover && this.state.title === "top" ? "shown" : "hidden"}>Contact</span>
-                        </div>
-                    </NavLink>
-                    <NavLink style={linkStyle} to={'/skills'}>
-                        <div className='header_arrows_left'>
-                            <i className="fas fa-angle-double-left" id='left'
-                               onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
-                            <span className={this.state.hover && this.state.title === "left" ? "shown" : "hidden"}>My skills</span>
-                        </div>
-                    </NavLink>
-                    <NavLink style={linkStyle} to={'/about'}>
-                        <div className='header_arrows_down'>
-                            <span className={this.state.hover && this.state.title === "down" ? "shown" : "hidden"}>About me</span>
-                            <i className="fas fa-angle-double-down" id='down'
-                               onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
-                        </div>
-                    </NavLink>
-                    <NavLink style={linkStyle} to={'/projects'}>
-                        <div className='header_arrows_right'>
-                            <span className={this.state.hover && this.state.title === "right" ? "shown" : "hidden"}>My projects</span>
-                            <i className="fas fa-angle-double-right" id='right'
-                               onMouseEnter={this.toggleHoverTop} onMouseLeave={this.toggleHoverTop}></i>
-                        </div>
-                    </NavLink>
+                <div className='header_links'>
+                    <ul className='header_links_list'>
+                        <li className={`header_links_list_single ${this.state.link === "about" && this.state.hover ? "hover" : "hidden"}`}
+                            id='about' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                            <span>About Me</span>
+                        </li>
+                        <li className={`header_links_list_single ${this.state.link === "skills" && this.state.hover ? "hover" : "hidden"}`}
+                            id='skills' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                            <span>My Skills</span>
+                        </li>
+                        <li className={`header_links_list_single ${this.state.link === "projects" && this.state.hover ? "hover" : "hidden"}`}
+                            id='projects' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                            <span>My Projects</span>
+                        </li>
+                    </ul>
                 </div>
             </section>
         );

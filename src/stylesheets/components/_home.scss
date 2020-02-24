@@ -1,202 +1,126 @@
 .header {
-  @include base;
-  background-color: #C7E1F3;
-
-  &:before, &:after {
-    background: url("./../../assets/background.svg") no-repeat;
-  }
-
-  &:before {
-    @include before;
-  }
-
-  &:after {
-    @include after;
-  }
+  display: flex;
+  flex-direction: column;
 
   &_title {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
     z-index: 10;
-    animation: 15s rotate ease-in-out;
-
-    h1, p {
-      z-index: 10;
-      color: #FFF;
-    }
+    line-height: 4rem;
 
     h1 {
       font-family: $font-decorative;
+      margin-bottom: 1rem;
     }
 
     p {
+      z-index: 10;
+      color: #FFF;
       font-family: $font-title;
       font-size: 2rem;
       text-shadow: 2px 2px 0 #272727;
-      animation-delay: 2s;
+      animation: type 4s steps(60, end);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 30rem;
+    }
+
+    i {
+      color: #FFF;
     }
   }
 
-  &_arrows {
+  &_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
-    color: white;
-    font-size: 3rem;
+    height: 80%;
+    width: 100%;
 
-    &_top, &_down, &_left, &_right {
-      position: absolute;
-      text-shadow: 2px 2px 2px black;
-      cursor: pointer;
+    &_list {
       display: flex;
       justify-content: center;
-      align-content: center;
-      margin: 1rem;
+      z-index: 10;
+      width: 60%;
+      height: 80%;
 
-      i {
+      &_single {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-content: flex-end;
+        height: 100%;
+        width: 33.3%;
+        position: relative;
+        margin: 0 2rem;
+        cursor: pointer;
+        transition: 2s;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #FFF url("./../../assets/pattern.png") no-repeat;
+          background-size: cover;
+          opacity: 0.3;
+          filter: grayscale(100%);
+          border-bottom: 0.1rem double #FFF;
+          border-right: 0.1rem double #FFF;
+        }
+
+        span {
+          z-index: 20;
+          padding: 0.5rem;
+          color: #FFF;
+          text-shadow: 2px 2px 2px #000;
+        }
       }
-
-      span {
-        font-size: 1.5rem;
-        border-radius: 2rem;
-        text-align: center;
-        padding: 0.2rem;
-        background: transparent;
-        border: 0.2rem solid #FFF;
-        color: #FFF;
-        font-family: $font-decorative;
-      }
-
-      .shown {
-        transition: all 0.5s linear;
-        opacity: 1;
-      }
-
-      .hidden {
-        opacity: 0;
-        transition: all 0.5s linear;
-      }
-    }
-
-    &_top, &_down {
-      flex-direction: column;
-      width: 3rem;
-
-      span {
-        writing-mode: vertical-lr;
-        min-height: 10rem;
-        width: 3rem;
-        margin: 1rem 0;
-        transition: opacity .25s ease-in-out;
-      }
-    }
-
-    &_left, &_right {
-      span {
-        height: 3rem;
-        width: 10rem;
-        margin: 0 1rem;
-      }
-    }
-
-    &_top {
-      top: 0;
-      left: 50%;
-      animation: pulseTop 2s infinite;
-    }
-
-    &_down {
-      bottom: 0;
-      left: 50%;
-      animation: pulseBottom 2s infinite;
-    }
-
-    &_left {
-      left: 0;
-      top: 45%;
-      animation: pulseLeft 2s infinite;
-    }
-
-    &_right {
-      right: 0;
-      top: 45%;
-      animation: pulseRight 2s infinite;
     }
   }
 }
 
-@keyframes pulseTop {
-  0% {
-    top: 0;
+.hidden {
+  opacity: 1;
+
+  &:before {
+    z-index: 20;
+    background: #FFF url("./../../assets/pattern.png") no-repeat;
+    background-size: cover;
+    transition: 2s;
+    opacity: 0.3;
+    filter: grayscale(100%);
   }
-  50% {
-    top: 2rem;
-  }
-  100% {
-    top: 0;
+
+  span {
+    font-size: 0.8rem;
+    transform: rotate(0deg) translate(0rem, 0rem);
+    transition: 2s ease-in-out;
   }
 }
 
-@keyframes pulseBottom {
-  0% {
-    bottom: 0;
-  }
-  50% {
-    bottom: 2rem;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-@keyframes pulseLeft {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 2rem;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes pulseRight {
-  0% {
-    right: 0;
-  }
-  50% {
-    right: 2rem;
-  }
-  100% {
-    right: 0;
-  }
-}
+.hover {
+  opacity: 0.5;
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
+  &:before {
+    z-index: 20;
+    background: url("./../../assets/pattern.png") no-repeat left bottom;
+    background-size: cover;
+    transition: 2s;
     opacity: 1;
+    filter: grayscale(0%);
   }
-};
 
-@keyframes rotate {
-  0% {
-    transform: rotate(360deg);
+  span {
+    font-size: 2rem;
+    transform: rotate(90deg) translate(0rem, -8rem);
+    transition: 2s ease-in-out;
   }
-  25% {
-    transform: rotate(-50deg);
-  }
-  50% {
-    transform: rotate(50deg);
-  }
-  75% {
-    transform: rotate(-20deg);
-  }
-  100% {
-    transform: rotate(0deg);
+}
+
+@keyframes type {
+  from {
+    width: 0;
   }
 }
