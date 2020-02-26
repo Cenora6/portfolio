@@ -36,11 +36,28 @@ class Contact extends Component {
             this.setState({
                 click: false,
                 opacity1: true,
-                opacity2: true,
-                opacity3: true,
-                opacity4: true,
             })
         }, 5000);
+        setTimeout(() => {
+            this.setState({
+                opacity2: !this.state.opacity1,
+            })
+        }, 5500);
+        setTimeout(() => {
+            this.setState({
+                opacity2: !this.state.opacity2,
+            })
+        }, 6000);
+        setTimeout(() => {
+            this.setState({
+                opacity3: !this.state.opacity3,
+            })
+        }, 6500);
+        setTimeout(() => {
+            this.setState({
+                opacity4: !this.state.opacity4,
+            })
+        }, 7000);
     };
 
     render() {
