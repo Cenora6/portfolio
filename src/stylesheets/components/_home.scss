@@ -101,7 +101,7 @@
     background: #FFF url("./../../assets/pattern.png") no-repeat;
     background-size: cover;
     transition: 2s;
-    opacity: 0.3;
+    opacity: 0.4;
     filter: grayscale(100%);
   }
 
@@ -125,7 +125,7 @@
   }
 }
 .hover {
-  opacity: 0.5;
+  opacity: 0.8;
 
   &:before {
     z-index: 20;

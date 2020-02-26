@@ -1,4 +1,102 @@
 .contact {
+  position: absolute;
+  z-index: 10;
 
+  &_circles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
 
+  &_single {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 3rem 0 0 2rem;
+    color: #FFF;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #272727;
+    animation: pulse 3s infinite;
+    background-color: #572EB9;
+  }
+
+  .linkedin, .facebook, .email, .github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0 #272727;
+    margin: -0.5rem 2.5rem;
+    z-index: -1;
+  }
+
+  .linkedin {
+    background-color: #4A53D8;
+  }
+
+  .facebook {
+    background-color: #6E93E8;
+    animation-delay: 0.5s;
+  }
+
+  .github {
+    background-color: #86C3ED;
+    animation-delay: 1s;
+  }
+
+  .email {
+    background-color: #A7F1E1;
+    animation-delay: 1.5s;
+  }
+}
+
+.icons_show {
+  animation: showIcons 1.5s;
+}
+
+.icons_disappear {
+  opacity: 0;
+  transition: 1s;
+}
+
+@keyframes showIcons {
+  0% {
+    margin-top: -2.3rem;
+    opacity: 0;
+  }
+  100% {
+    margin-top: -0.5rem;
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
 }
