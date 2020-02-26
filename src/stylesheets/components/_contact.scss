@@ -34,7 +34,7 @@
     background-color: #572EB9;
   }
 
-  .linkedin, .facebook, .email, .github {
+  .linkedin, .facebook, .email, .github, .instagram {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,10 +67,15 @@
     background-color: #A7F1E1;
     animation-delay: 1.5s;
   }
+
+  .instagram {
+    background-color: #C4FFDA;
+    animation-delay: 2s;
+  }
 }
 
 .icons_show {
-  animation: showIcons 1.5s;
+  animation: showIcons 2s;
 }
 
 .icons_disappear {

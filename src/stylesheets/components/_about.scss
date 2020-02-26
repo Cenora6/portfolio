@@ -1,4 +1,82 @@
 .about {
 
+  &_title {
+    width: 50%;
+    z-index: 11;
+
+    &_image {
+      z-index: 11;
+
+      &_shape {
+        z-index: 11;
+        position: absolute;
+        top: 10%;
+        right: 20%;
+        width: 17rem;
+        height: 15rem;
+        transform: skew(20deg);
+      }
+
+      .first {
+        background: #4A53D8;
+        filter: drop-shadow(16px 16px 20px #4A53D8);
+      }
+
+      .second {
+        transform: skew(20deg) rotate(10deg);
+        background: #6E93E8;
+      }
+
+      .third {
+        transform: skew(20deg) rotate(20deg);
+        background: #86C3ED;
+      }
+    }
+
+    &_name {
+
+      h1 {
+        font-family: $font-title;
+      }
+
+      h2 {
+        font-family: $font-decorative;
+      }
+
+      p {
+        word-spacing: 0.3rem;
+        font-size: 1.5rem;
+        font-family: $font-base;
+        margin: 2rem 0;
+      }
+    }
+  }
+
+  &_description {
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    font-family: $font-base;
+    margin: 2rem 0;
+
+    p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      color: #464648;
+    }
+  }
+
+  .decorative {
+    &:nth-of-type(even) {
+      color: #4A53D8;
+    }
+
+    &:nth-of-type(odd) {
+      color: #6E93E8;
+    }
+  }
 
 }

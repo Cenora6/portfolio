@@ -1,14 +1,53 @@
 import React, {Component} from 'react';
+import Contact from "./Contact";
 
 class About extends Component {
 
     render() {
         return (
-            <section className='about'>
-                <div className='background'>
-                    <p>This is meee</p>
-                </div>
-            </section>
+            <>
+                <Contact/>
+                <section className='about'>
+                    <div className='background'>
+                        <div className='about_title'>
+                            <div className='about_title_name'>
+                                <h1>Hello!</h1>
+                                <h2>I'm Aleksandra Gasidlo </h2>
+                                <p>
+                                    A <span className='decorative'>frontend developer</span> and
+                                    <span className='decorative'>medical laboratory scientist</span>
+                                </p>
+                            </div>
+                            <div className='about_title_image'>
+                                <span className='about_title_image_shape first'></span>
+                                <span className='about_title_image_shape second'></span>
+                                <span className='about_title_image_shape third'></span>
+                            </div>
+                        </div>
+                        <div className='about_description'>
+                            <p>
+                                I've started <span className='decorative'>programming</span> recently and discovered
+                                it's something I want to do for the rest of the life. Previously I was working as a
+                                <span className='decorative'>medical laboratory scientist</span> in a laboratory at the
+                                hospital.
+                            </p>
+                            <p>
+                                Couple years ago my interest in <span className='decorative'> Korean culture </span>started
+                                and that's how I ended up <span className='decorative'> learning Korean language </span>
+                                by my own (I'm aiming to speak Korean fluently) and traveling to
+                                <span className='decorative'>South Korea</span>.
+                            </p>
+                            <p>
+                                In the free time I love playing <span className='decorative'> computer games </span> and
+                                <span className='decorative'> visiting new countries (especially their zoos) </span>
+                                since I love animals. This is why I love keeping an eye on my lovely pet - a
+                                <span className='decorative'> snake named Freya </span>. I can't live without the
+                                <span className='decorative'> music </span>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </>
         )
     }
 }

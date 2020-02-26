@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
+import Contact from "./Contact";
 
 class Projects extends Component {
 
     render() {
         return (
-            <section className='projects'>
+            <>
+                <Contact/>
+                <section className='projects'>
 
-            </section>
+                </section>
+            </>
         )
     }
 }

@@ -7,6 +7,7 @@ class Contact extends Component {
         opacity2: true,
         opacity3: true,
         opacity4: true,
+        opacity5: true,
     };
 
     onClick = () => {
@@ -34,30 +35,40 @@ class Contact extends Component {
         }, 3000);
         setTimeout(() => {
             this.setState({
+                opacity5: !this.state.opacity5,
+            })
+        }, 4000);
+        setTimeout(() => {
+            this.setState({
                 click: false,
                 opacity1: true,
-            })
-        }, 5000);
-        setTimeout(() => {
-            this.setState({
-                opacity2: !this.state.opacity1,
-            })
-        }, 5500);
-        setTimeout(() => {
-            this.setState({
-                opacity2: !this.state.opacity2,
             })
         }, 6000);
         setTimeout(() => {
             this.setState({
-                opacity3: !this.state.opacity3,
+                opacity2: !this.state.opacity1,
             })
         }, 6500);
         setTimeout(() => {
             this.setState({
-                opacity4: !this.state.opacity4,
+                opacity2: !this.state.opacity2,
             })
         }, 7000);
+        setTimeout(() => {
+            this.setState({
+                opacity3: !this.state.opacity3,
+            })
+        }, 7500);
+        setTimeout(() => {
+            this.setState({
+                opacity4: !this.state.opacity4,
+            })
+        }, 8000);
+        setTimeout(() => {
+            this.setState({
+                opacity5: !this.state.opacity5,
+            })
+        }, 8500);
     };
 
     render() {
@@ -91,6 +102,13 @@ class Contact extends Component {
                         <div className={`contact_circles_single email ${this.state.click ? "icons_show" : "icons_disappear"}`}
                              style={{opacity: this.state.opacity4 ? '0' : '0.8' }}>
                             <i className="fas fa-envelope"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/wonthirst/">
+                        <div className={`contact_circles_single instagram ${this.state.click ? "icons_show" : "icons_disappear"}`}
+                             style={{opacity: this.state.opacity5 ? '0' : '0.8' }}>
+                            <i className="fab fa-instagram"></i>
                         </div>
                     </a>
                 </div>
