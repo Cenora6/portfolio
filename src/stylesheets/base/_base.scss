@@ -88,26 +88,6 @@ section {
 }
 
 .hide {
-  transition: 5s;
+  transition: 1s;
   opacity: 0;
-}
-
-.transition {
-  position: absolute;
-  left: 25.2rem;
-  bottom: 4.1rem;
-  opacity: 0;
-  background: #FFF;
-  height: 57%;
-  width: 16.5%;
-  transition: 5s;
-  transform-origin: left bottom;
-}
-
-.show {
-  position: absolute;
-  width: 57%;
-  height: 86%;
-  opacity: 0.5;
-  z-index: 10;
 }

@@ -5,13 +5,24 @@
   align-content: center;
   overflow: hidden;
 
+  &_background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 57%;
+    height: 86%;
+    z-index: 10;
+  }
+
   &_title {
     z-index: 10;
     line-height: 4rem;
+    margin-bottom: 2rem;
 
     h1 {
       font-family: $font-decorative;
-      margin-bottom: 1rem;
     }
 
     p {
@@ -36,15 +47,15 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    height: 80%;
+    height: 100%;
     width: 100%;
 
     &_list {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       z-index: 10;
-      width: 60%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
 
       &_single {
         display: flex;
@@ -52,9 +63,8 @@
         justify-content: flex-end;
         align-content: flex-end;
         height: 100%;
-        width: 33.3%;
+        width: 30.3%;
         position: relative;
-        margin: 0 2rem;
         cursor: pointer;
         transition: 2s;
 
@@ -102,6 +112,18 @@
   }
 }
 
+.first_box {
+  &:before {
+    transform: scaleX(-1);
+  }
+}
+
+.second_box.hidden {
+  &:before {
+    background: #FFF url("./../../assets/pattern2.png") no-repeat center;
+    background-size: cover;
+  }
+}
 .hover {
   opacity: 0.5;
 
@@ -119,6 +141,45 @@
     transform: rotate(90deg) translate(0rem, -8rem);
     transition: 2s ease-in-out;
   }
+}
+
+.second_box.hover {
+  &:before {
+    background: url("./../../assets/pattern2.png") no-repeat center;
+    background-size: cover;
+  }
+}
+
+.transition1, .transition2, .transition3 {
+  position: absolute;
+  opacity: 0;
+  background: #FFF;
+  height: 64.5%;
+  width: 30%;
+  transition: 5s;
+  bottom: 0;
+}
+
+.transition1 {
+  left: 0;
+}
+
+.transition2 {
+  left: 35%;
+}
+
+.transition3 {
+  left: 70%;
+}
+
+.show {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
 }
 
 @keyframes type {
