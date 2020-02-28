@@ -27,7 +27,7 @@ class About extends Component {
             <>
                 <Contact/>
                 <section className='about'>
-                    <div className={`background ${this.state.clicked && "back_to_home"}`}>
+                    <div className={`background ${this.state.clicked && "back_to_home1"}`}>
                         <div className={`fadeIn_background about_title ${this.state.clicked && "fadeOut_background"}`}>
                             <div className='about_title_name'>
                                 <h1>Hello!</h1>

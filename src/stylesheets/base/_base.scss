@@ -15,10 +15,13 @@ article, aside, figcaption, figure, footer, header, nav, section {
 
 }
 h1, h2, h3, h4 {
+  text-shadow: 2px 2px 0 #272727, 4px 4px 0 #000000;
+}
+
+h1, h2, h3, h4, h5 {
   line-height: 1.25;
   z-index: 10;
   color: #FFF;
-  text-shadow: 2px 2px 0 #272727, 4px 4px 0 #000000;
 }
 
 h1 {
@@ -35,6 +38,10 @@ h3 {
 
 h4 {
   font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.8rem;
 }
 
 a {
@@ -107,40 +114,55 @@ section {
   }
 }
 
-.back_to_home {
+.back_to_home1, .back_to_home2, .back_to_home3 {
   &:before {
     animation: backToHome 3s forwards;
+  }
+}
+
+.back_to_home1 {
+  &:before {
     transform-origin: bottom left;
+    bottom: 8%;
+    left: 21.5%;
+  }
+}
+
+.back_to_home2 {
+  &:before {
+    transform-origin: bottom;
+    bottom: 8%;
+  }
+}
+
+.back_to_home3 {
+  &:before {
+    transform-origin: bottom right;
+    bottom: 8%;
   }
 }
 
 @keyframes backToHome {
   to {
-    transform: translate(-37%, -75%) rotate(90deg);
-    width: 28%;
-    height: 35%;
+    width: 18%;
+    height: 57%;
   }
 }
 
-.hide {
-  transition: 1s;
-  opacity: 0;
-}
-
 .fadeIn_background {
-  animation: fadeIn 3s ease;
+  animation: fadeIn 5s ease;
 }
 
 .fadeOut_background {
-  animation: fadeOut 3s ease;
+  animation: fadeOut 5s ease;
 }
 
 @keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
@@ -153,3 +175,23 @@ section {
   }
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  .tooltiptext {
+    width: 90%;
+    height: 1rem;
+    bottom: -1rem;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 0.1rem 0;
+    position: absolute;
+    z-index: 15;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.6rem;
+    transition: opacity 1s ease-in-out;
+  }
+}
