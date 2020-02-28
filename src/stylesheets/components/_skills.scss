@@ -1,69 +1,69 @@
 .skills {
 
-  h2 {
-    font-family: $font-title;
-  }
-
-  &_header {
-    z-index: 10;
-    width: 40%;
-    height: 2rem;
-    background-color: #3C3F41;
-  }
-
-  &_canvas {
+  &_section {
+    z-index: 11;
     display: flex;
-    z-index: 10;
-    width: 40%;
-    height: 80%;
-    background-color: #2B2B2B;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 
-    &_numbers {
-      display: flex;
-      flex-direction: column;
-      background-color: #313335;
-      width: 3rem;
-      height: 100%;
-
-      li {
-        line-height: 2.5rem;
-        font-size: 0.8rem;
-        color: #4e5256;
-        text-align: center;
-      }
+    h2 {
+      height: 10%;
+      text-align: center;
+      font-family: $font-title;
+      margin-bottom: 4rem;
     }
 
-    &_html {
+    &_images {
       display: flex;
-      flex-direction: column;
-      padding: 0 1rem;
-      font-family: $font-decorative;
+      justify-content: center;
+      align-content: center;
+      height: 90%;
+      width: 50%;
+      margin: 0 auto;
 
-      li {
-        line-height: 2.5rem;
-        font-size: 1.5rem;
-        color: #D5B667;
-        letter-spacing: 0.2rem;
+      &_titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        width: 30%;
+        background-color: #572EB9;
+
+        h3 {
+          width: 100%;
+          font-family: $font-decorative;
+        }
       }
 
-      .first {
-        margin-left: 1rem;
+      &_tools {
+        margin: 0 1rem;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        &_single {
+
+
+        }
       }
 
-      .second {
-        margin-left: 2rem;
-      }
+      img {
+        margin: 1rem;
+        vertical-align: middle;
+        height: 6rem;
+        filter: grayscale(100%);
+        transition: 2s;
+        cursor: pointer;
 
-      .third {
-        margin-left: 3rem;
-      }
+        &:last-of-type {
+          height: 3rem;
+        }
 
-      .html {
-        color: #B5B8B4;
-      }
-
-      .class {
-        color: #6BA959;
+        &:hover {
+          filter: grayscale(0%);
+        }
       }
     }
   }

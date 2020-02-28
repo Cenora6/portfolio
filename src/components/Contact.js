@@ -73,7 +73,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <section className='contact'>
+            <div className='contact'>
                 <div className='contact_circles'>
                     <div className='contact_circles_single main' onClick={this.onClick}>
                         <i className="far fa-address-book"></i>
@@ -112,7 +112,7 @@ class Contact extends Component {
                         </div>
                     </a>
                 </div>
-            </section>
+            </div>
         )
     }
 }

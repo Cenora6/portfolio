@@ -34,6 +34,10 @@
     }
 
     &_name {
+      animation: type 4s steps(60, end);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 40rem;
 
       h1 {
         font-family: $font-title;
@@ -78,5 +82,4 @@
       color: #6E93E8;
     }
   }
-
 }
