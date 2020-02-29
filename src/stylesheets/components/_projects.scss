@@ -1,3 +1,83 @@
 .projects {
 
+  h2 {
+  }
+
+  &_images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+    z-index: 11;
+    position: relative;
+    margin: 2rem 0;
+
+    &_single {
+      display: flex;
+      margin: 0.5rem;
+      align-items: center;
+      width: 30%;
+      height: auto;
+      background: blue;
+      cursor: pointer;
+      transition: 2s;
+      filter: grayscale(100%);
+      border: 0.5rem double #FFF;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    border-radius: 1rem;
+    z-index: 10;
+    opacity: 0.5;
+
+    button {
+      margin: -0.2rem 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .active {
+      transition: 2s;
+      background: #572EB9;
+      font-size: 1rem;
+      color: #FFF;
+      font-weight: 600;
+    }
+
+    &_big, &_small {
+      background: #8b8b8b;
+      border-radius: 50%;
+      margin: 0 1rem;
+    }
+
+    &_big {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &_small {
+      width: 1rem;
+      height: 1rem;
+      margin: 0.5rem;
+    }
+
+    i {
+      font-size: 2rem;
+      color: #572EB9;
+      cursor: pointer;
+      transition: 1s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
 }

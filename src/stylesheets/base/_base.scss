@@ -22,6 +22,8 @@ h1, h2, h3, h4, h5 {
   line-height: 1.25;
   z-index: 10;
   color: #FFF;
+  text-align: center;
+  margin: 1rem 0;
 }
 
 h1 {
@@ -30,6 +32,7 @@ h1 {
 
 h2 {
   font-size: 3rem;
+  font-family: 'Cedarville Cursive', cursive;
 }
 
 h3 {
@@ -47,6 +50,11 @@ h5 {
 a {
   color: #FFF;
   text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
 }
 
 section {
@@ -139,6 +147,7 @@ section {
   &:before {
     transform-origin: bottom right;
     bottom: 8%;
+    right: 21.5%;
   }
 }
 
@@ -150,11 +159,11 @@ section {
 }
 
 .fadeIn_background {
-  animation: fadeIn 5s ease;
+  animation: fadeIn 3s ease;
 }
 
 .fadeOut_background {
-  animation: fadeOut 5s ease;
+  animation: fadeOut 3s ease;
 }
 
 @keyframes fadeIn {
