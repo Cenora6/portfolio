@@ -1,34 +1,6 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
-import project1 from "./../assets/projects/project1.png";
-import project2 from "./../assets/projects/project2.png";
-import project3 from "./../assets/projects/project3.png";
-import project4 from "./../assets/projects/project4.png";
-import project5 from "./../assets/projects/project5.png";
-import project6 from "./../assets/projects/project6.png";
-import project7 from "./../assets/projects/project7.png";
-import project8 from "./../assets/projects/project8.png";
-import project9 from "./../assets/projects/project9.png";
-import project10 from "./../assets/projects/project10.png";
-import project11 from "./../assets/projects/project11.png";
-import project12 from "./../assets/projects/project12.png";
-
-const projects = {
-    link: [
-        project1,
-        project2,
-        project3,
-        project4,
-        project5,
-        project6,
-        project7,
-        project8,
-        project9,
-        project10,
-        project11,
-        project12
-    ],
-};
+import { projects, projectsDetails } from "./../database/projects"
 
 class Projects extends Component {
     state = {
@@ -36,6 +8,9 @@ class Projects extends Component {
         projectsPerPage: 9,
         back: false,
         clicked: false,
+        changePage: false,
+        activeProject: "",
+        showProjectDetails: false,
     };
 
     goBack = () => {
@@ -63,11 +38,20 @@ class Projects extends Component {
         (i > 1) ?
             this.setState({
                 currentPage: i - 1,
+                changePage: !this.state.changePage,
             })
             :
             this.setState({
                 currentPage: i,
-            })
+                changePage: !this.state.changePage,
+            });
+    };
+
+    backToProjects = () => {
+        this.setState({
+            activeProject: "",
+            showProjectDetails: false,
+        })
     };
 
     showButtons = () => {
@@ -87,6 +71,27 @@ class Projects extends Component {
         return buttons;
     };
 
+    backButtons = () => {
+        return (
+            <>
+                <button className="back active" onClick={this.backToProjects}>back</button>
+            </>
+        )
+    };
+
+    showProjectDetails = (e) => {
+        (this.state.currentPage === 1) ?
+            this.setState({
+                activeProject: e.target.id,
+                showProjectDetails: true,
+            })
+            :
+            this.setState({
+                activeProject: parseInt(e.target.id) + 9,
+                showProjectDetails: true,
+            })
+    };
+
     buildList = () => {
 
         const {currentPage, projectsPerPage} = this.state;
@@ -99,22 +104,47 @@ class Projects extends Component {
 
         return (
             <>
-                {visibleProjects.map( (project) => {
+                {visibleProjects.map( (project, index) => {
                     return (
-                        <img className='projects_images_single' src={project} alt="projects"/>
+                        <>
+                            <img key={index} id={index} className={`projects_images_single 
+                            ${this.state.changePage ? "animated" : ""}`} src={project} alt="projects"
+                                 onClick={(e) => this.showProjectDetails(e, index)}/>
+                        </>
                     )
                 })}
             </>
         );
     };
 
+    projectDetails = () => {
+        const { activeProject } = this.state;
+        const project = projectsDetails[activeProject];
+        console.log([...project.image]);
+        return (
+            <>
+                <div className='projects_images_details'>
+                    {project.image.length > 1 ?
+                        <>
+                            <img src={project.image[0]} alt='project_details'/>
+                            <img src={project.image[1]} alt='project_details'/>
+                        </>
+                        :
+                        <img src={project.image[0]} alt="images"/>
+                    }
+                    <p>{project.details}</p>
+                </div>
+                <p className='projects_images_description'>{project.description}</p>
+            </>
+        );
+
+    };
+
     render() {
-
         let buttonList;
-        buttonList = this.showButtons();
-
+        this.state.showProjectDetails ? buttonList = this.backButtons() : buttonList = this.showButtons();
         let projectsList;
-        projectsList = this.buildList();
+        this.state.showProjectDetails ? projectsList = this.projectDetails()  : projectsList = this.buildList();
 
         return (
             <>

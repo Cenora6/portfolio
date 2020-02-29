@@ -80,27 +80,27 @@ class Contact extends Component {
                     </div>
                     <a href="https://www.linkedin.com/in/aleksandra-gasid%C5%82o-8b0338190/">
                         <div className={`contact_circles_single linkedin ${this.state.click ? "icons_show" : "icons_disappear"}`}
-                             style={{ opacity: this.state.opacity1 ? '0' : '0.8' }}>
+                             style={{ opacity: this.state.opacity1 ? '0' : '0.8', display: this.state.opacity1 ? 'none' : 'block' }}>
                             <i className="fab fa-linkedin-in"></i>
                         </div>
                     </a>
                     <a href="https://www.facebook.com/Cenora06/">
                         <div className={`contact_circles_single facebook ${this.state.click ? "icons_show" : "icons_disappear"}`}
-                             style={{opacity: this.state.opacity2 ? '0' : '0.8' }}>
+                             style={{opacity: this.state.opacity2 ? '0' : '0.8', display: this.state.opacity2 ? 'none' : 'block' }}>
                             <i className="fab fa-facebook"></i>
                         </div>
                     </a>
 
                     <a href="https://github.com/Cenora6/">
                         <div className={`contact_circles_single github ${this.state.click ? "icons_show" : "icons_disappear"}`}
-                             style={{opacity: this.state.opacity3 ? '0' : '0.8' }}>
+                             style={{opacity: this.state.opacity3 ? '0' : '0.8', display: this.state.opacity3 ? 'none' : 'block'}}>
                             <i className="fab fa-github"></i>
                         </div>
                     </a>
 
                     <a href="mailto:aleksandra.gasidlo@gmail.com">
                         <div className={`contact_circles_single email ${this.state.click ? "icons_show" : "icons_disappear"}`}
-                             style={{opacity: this.state.opacity4 ? '0' : '0.8' }}>
+                             style={{opacity: this.state.opacity4 ? '0' : '0.8', display: this.state.opacity4 ? 'none' : 'block' }}>
                             <i className="fas fa-envelope"></i>
                         </div>
                     </a>
