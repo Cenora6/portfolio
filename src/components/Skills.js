@@ -39,10 +39,17 @@ class Skills extends Component {
     };
 
     showTooltip = (e) => {
-      this.setState({
-          tooltip: true,
-          tooltipTitle: e.target.alt,
-      });
+        this.setState({
+            tooltip: !this.state.tooltip,
+            tooltipTitle: e.currentTarget.id,
+        });
+    };
+
+    hideToolTip = (e) => {
+        this.setState({
+            tooltip: !this.state.tooltip,
+            tooltipTitle: "",
+        });
     };
 
     render() {
@@ -56,67 +63,67 @@ class Skills extends Component {
                             <div className='skills_section_images_tools'>
                                 <h5>Front End</h5>
                                 <article className='skills_section_images_tools_single'>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='css'>
                                         <img src={css} alt='css'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "css") ? "0.5" : "0"}`}}>CSS3</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "css" ? "0.5" : "0"}`}}>CSS3</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='html'>
                                         <img src={html} alt='html'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "html") ? "0.5" : "0"}`}}>HTML5</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "html" ? "0.5" : "0"}`}}>HTML5</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='es6'>
                                         <img src={es6} alt='es6'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "es6") ? "0.5" : "0"}`}}>ES6</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "es6" ? "0.5" : "0"}`}}>ES6</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='sass'>
                                         <img src={sass} alt='sass'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "sass") ? "0.5" : "0"}`}}>SASS</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "sass" ? "0.5" : "0"}`}}>SASS</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='javascript'>
                                         <img src={javascript} alt='javascript'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "javascript") ? "0.5" : "0"}`}}>JavaScript</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "javascript" ? "0.5" : "0"}`}}>JavaScript</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='react'>
                                         <img src={react} alt='react'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "react") ? "0.5" : "0"}`}}>React</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "react" ? "0.5" : "0"}`}}>React</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='jQuery'>
                                         <img src={jQuery} alt='jQuery'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "jQuery") ? "0.5" : "0"}`}}>jQuery</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "jQuery" ? "0.5" : "0"}`}}>jQuery</span>
                                     </div>
                                 </article>
                                 <h5>Back End</h5>
                                 <article className='skills_section_images_tools_single'>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='firebase'>
                                         <img src={firebase} alt='firebase'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "firebase") ? "0.5" : "0"}`}}>Firebase</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "firebase" ? "0.5" : "0"}`}}>Firebase</span>
                                     </div>
                                 </article>
                                 <h5>Tools/other</h5>
                                 <article className='skills_section_images_tools_single'>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='git'>
                                         <img src={git} alt='git'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "git") ? "0.5" : "0"}`}}>Git</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "git" ? "0.5" : "0"}`}}>Git</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='ubuntu'>
                                         <img src={ubuntu} alt='ubuntu'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "ubuntu") ? "0.5" : "0"}`}}>Ubuntu</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "ubuntu" ? "0.5" : "0"}`}}>Ubuntu</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='gulp'>
                                         <img src={gulp} alt='gulp'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "gulp") ? "0.5" : "0"}`}}>Gulp</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "gulp" ? "0.5" : "0"}`}}>Gulp</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='webpack'>
                                         <img src={webpack} alt='webpack'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "webpack") ? "0.5" : "0"}`}}>Webpack</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "webpack" ? "0.5" : "0"}`}}>Webpack</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='babel'>
                                         <img src={babel} alt='babel'/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "babel") ? "0.5" : "0"}`}}>Babel</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "babel" ? "0.5" : "0"}`}}>Babel</span>
                                     </div>
-                                    <div className="tooltip" onMouseLeave={this.showTooltip} onMouseEnter={this.showTooltip}>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='npm'>
                                         <img src={npm} alt='npm' style={{height: "3rem"}}/>
-                                        <span className="tooltiptext" style={{opacity: `${(this.state.tooltip && this.state.tooltipTitle === "npm") ? "0.5" : "0"}`}}>Npm</span>
+                                        <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "npm" ? "0.5" : "0"}`}}>Npm</span>
                                     </div>
                                 </article>
                             </div>
