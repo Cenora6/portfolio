@@ -1,3 +1,5 @@
+@import "./../utils/variables.scss";
+
 html {
   width: 100vw;
   height: 100vh;
@@ -50,6 +52,23 @@ h5 {
 a {
   color: #FFF;
   text-decoration: none;
+}
+
+p {
+  font-family: $font-base;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  color: #464648;
+
+  .decorative {
+    &:nth-of-type(even) {
+      color: #4A53D8;
+    }
+
+    &:nth-of-type(odd) {
+      color: #6E93E8;
+    }
+  }
 }
 
 button {

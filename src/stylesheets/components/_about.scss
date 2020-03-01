@@ -63,23 +63,6 @@
     justify-content: center;
     align-content: center;
     width: 50%;
-    font-family: $font-base;
     margin: 2rem 0;
-
-    p {
-      font-size: 1.1rem;
-      margin: 1rem 0;
-      color: #464648;
-    }
-  }
-
-  .decorative {
-    &:nth-of-type(even) {
-      color: #4A53D8;
-    }
-
-    &:nth-of-type(odd) {
-      color: #6E93E8;
-    }
   }
 }
