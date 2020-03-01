@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import Contact from "./Contact";
+import CV from "./CV";
 
 class Home extends Component {
     state = {
@@ -14,8 +15,8 @@ class Home extends Component {
     toggleHover = (e) => {
         this.setState({
             hoverSection: !this.state.hoverSection,
-            link: e.target.id,
-        })
+            link: e.currentTarget.id,
+        });
     };
 
     goToAboutMe = (e) => {
@@ -102,6 +103,7 @@ class Home extends Component {
                         <div className={`transition3 ${this.state.clicked3 && "show"}`}></div>
                     </div>
                 </section>
+                <CV/>
             </>
         );
     }

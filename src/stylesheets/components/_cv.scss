@@ -1,0 +1,54 @@
+.cv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 12rem solid #272727;
+  border-left: 12rem solid transparent;
+  transition: 2s;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    z-index: 12;
+    color: #FFF;
+    text-align: center;
+    transition: 2s;
+    font-size: 0.8rem;
+
+    &:first-of-type {
+      transform: rotate(0deg);
+      right: 3rem;
+      bottom: -11rem;
+    }
+
+    &:nth-of-type(2) {
+      transform: rotate(-90deg);
+      right: 0;
+      bottom: -8rem;
+    }
+  }
+
+  &:hover {
+    border-bottom: 14rem solid #272727;
+    border-left: 14rem solid transparent;
+
+    span {
+      font-size: 1.2rem;
+
+      &:first-of-type {
+        transform: rotate(-45deg);
+        right: 4rem;
+        bottom: -10rem;
+      }
+
+      &:nth-of-type(2) {
+        transform: rotate(-45deg);
+        right: 2rem;
+        bottom: -7rem;
+      }
+
+    }
+  }
+}
