@@ -22,14 +22,14 @@ class Home extends Component {
     goToAboutMe = (e) => {
         this.setState({
             link: "",
-            clicked1: true,
+            clicked1: !this.state.clicked1,
         });
         e.preventDefault();
         setTimeout(() => {
             this.props.history.push('/about');
             this.setState({
-                clicked1: false,
-                hoverSection: false,
+                clicked1: !this.state.clicked1,
+                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
@@ -38,14 +38,14 @@ class Home extends Component {
     goToSkills = (e) => {
         this.setState({
             link: "",
-            clicked2: true,
+            clicked2: !this.state.clicked2,
         });
         e.preventDefault();
         setTimeout(() => {
             this.props.history.push('/skills');
             this.setState({
-                clicked2: false,
-                hoverSection: false,
+                clicked2: !this.state.clicked2,
+                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
@@ -54,14 +54,14 @@ class Home extends Component {
     goToProjects = (e) => {
         this.setState({
             link: "",
-            clicked3: true,
+            clicked3: !this.state.clicked3,
         });
         e.preventDefault();
         setTimeout(() => {
             this.props.history.push('/projects');
             this.setState({
-                clicked3: false,
-                hoverSection: false,
+                clicked3: !this.state.clicked3,
+                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
