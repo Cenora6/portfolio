@@ -29,7 +29,6 @@ class Home extends Component {
             this.props.history.push('/about');
             this.setState({
                 clicked1: !this.state.clicked1,
-                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
@@ -45,7 +44,6 @@ class Home extends Component {
             this.props.history.push('/skills');
             this.setState({
                 clicked2: !this.state.clicked2,
-                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
@@ -61,7 +59,6 @@ class Home extends Component {
             this.props.history.push('/projects');
             this.setState({
                 clicked3: !this.state.clicked3,
-                hoverSection: !this.state.hoverSection,
                 link: "",
             })
         },3000)
@@ -73,7 +70,7 @@ class Home extends Component {
                 <Contact/>
                 <section className='header'>
                     <div className='header_background'>
-                        <div className={`fadeIn_background header_title ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) && "fadeOut_background"}`}>
+                        <div className={`header_title ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade_out" : "fade_in"}`}>
                             <h1>Aleksandra Gasidlo</h1>
                             <p>
                                 <i className="fas fa-vial"></i> Medical Laboratory Scientist.
@@ -82,7 +79,7 @@ class Home extends Component {
                                 <i className="fas fa-code"></i> Front-end Developer.
                             </p>
                         </div>
-                        <div className={`fadeIn_background header_links ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) && "fadeOut_background"}`}>
+                        <div className={`header_links ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade_out" : "fade_in"}`}>
                             <ul className='header_links_list'>
                                 <li className={`header_links_list_single first_box ${this.state.link === "about" && this.state.hoverSection ? "hover" : "hidden"}`}
                                     id='about' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToAboutMe}>

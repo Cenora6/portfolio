@@ -1,22 +1,24 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
 import { projects, projectsDetails } from "./../database/projects"
+import CV from "./CV";
 
 class Projects extends Component {
     state = {
         currentPage: 1,
         projectsPerPage: 9,
-        back: false,
+        hoverBackButton: false,
         clicked: false,
         showCurrent: true,
         changePage: false,
         activeProject: "",
         showProjectDetails: false,
+        details: false,
     };
 
     goBack = () => {
         this.setState({
-            back: !this.state.back,
+            hoverBackButton: !this.state.hoverBackButton,
         })
     };
 
@@ -70,13 +72,12 @@ class Projects extends Component {
 
     backToProjects = () => {
         this.setState({
-            showProjectDetails: false,
+            details: !this.state.details,
         });
 
         setTimeout(() => {
             this.setState({
-                changePage: false,
-                showProjectDetails: false
+                showProjectDetails: !this.state.showProjectDetails,
             });
         },700)
     };
@@ -87,11 +88,16 @@ class Projects extends Component {
         for (let i = 1; i <= projectsNumber + 1; i++) {
             this.state.currentPage === i && (
                 buttons.push (
-                    <>
-                        <i className="fas fa-angle-left" onClick={ (e) => this.previousPage(e, i) }></i>
-                        <button key={i} className={`buttons ${this.state.currentPage === i ? "active" : ""}`}>{i}</button>
+                    <div key={i} className={`projects_buttons ${this.state.changePage ? "hide_buttons" : "show_buttons"} 
+                     ${this.state.clicked ? "fade_out" : "fade_in"} `} >
+                        <span className='projects_buttons_small'></span>
+                        <span className='projects_buttons_big'></span>
+                        <i className="fas fa-angle-left " onClick={ (e) => this.previousPage(e, i) }></i>
+                        <button className={`buttons ${this.state.currentPage === i ? "active" : ""}`}>{i}</button>
                         <i className="fas fa-angle-right" onClick={ (e) => this.nextPage(e, i)}></i>
-                    </>
+                        <span className='projects_buttons_big'></span>
+                        <span className='projects_buttons_small'></span>
+                    </div>
                 )
             )
         }
@@ -100,9 +106,14 @@ class Projects extends Component {
 
     backButtons = () => {
         return (
-            <>
-                <button className="back active" onClick={this.backToProjects}>back</button>
-            </>
+            <div className={`projects_buttons ${this.state.changePage ? "hide_buttons" : "show_buttons"}
+            ${this.state.clicked ? "fade_out" : "fade_in"} `} >
+                <span className='projects_buttons_small'></span>
+                <span className='projects_buttons_big'></span>
+                <button className={`back active ${this.state.details ? "fade_in" : "fade_out"}`} onClick={this.backToProjects}>back</button>
+                <span className='projects_buttons_big'></span>
+                <span className='projects_buttons_small'></span>
+            </div>
         )
     };
 
@@ -121,29 +132,26 @@ class Projects extends Component {
         setTimeout(() => {
             this.setState({
                 changePage: !this.state.changePage,
-                showProjectDetails: !this.state.showProjectDetails
+                showProjectDetails: !this.state.showProjectDetails,
+                details: !this.state.details,
             });
         },700)
     };
 
     buildList = () => {
 
-        const {currentPage, projectsPerPage} = this.state;
-        let itemArray;
-        itemArray = projects.link;
+        const {currentPage, projectsPerPage, changePage} = this.state;
 
         const indexLast = currentPage * projectsPerPage;
         const indexFirst = indexLast - projectsPerPage;
-        const visibleProjects = itemArray.slice(indexFirst, indexLast);
+        const visibleProjects = projects.link.slice(indexFirst, indexLast);
 
         return (
             <>
                 {visibleProjects.map( (project, index) => {
                     return (
-                        <>
-                            <img key={index} id={index} className={`projects_images_single ${this.state.changePage ? "hiddenPage" : "shownPage"}`} src={project} alt="projects"
-                                 onClick={(e) => this.showProjectDetails(e, index)}/>
-                        </>
+                        <img key={index} id={index} className={`projects_images_single ${changePage ? "hiddenPage" : "shownPage"}`} src={project} alt="projects"
+                             onClick={(e) => this.showProjectDetails(e, index)}/>
                     )
                 })}
             </>
@@ -151,21 +159,15 @@ class Projects extends Component {
     };
 
     projectDetails = () => {
-        const { activeProject } = this.state;
+        console.log(this.state.showProjectDetails)
+        const { activeProject, details } = this.state;
         const project = projectsDetails[activeProject];
         return (
             <>
-                <div className={`projects_images_details ${this.state.showProjectDetails ? "shownPage" : "hiddenPage"}`}>
-                    {project.image.length > 1 ?
-                        <div className='projects_images_details_photos'>
-                            <img src={project.image[0]} alt='project_details'/>
-                            <img src={project.image[1]} alt='project_details'/>
-                        </div>
-                        :
-                        <div className='projects_images_details_photos'>
-                            <img src={project.image[0]} alt="images"/>
-                        </div>
-                    }
+                <div className={`projects_images_details ${details ? "shownPage" : "hiddenPage"}`}>
+                    <div className='projects_images_details_photos'>
+                        {project.image.map( (image, index) => <img key={index} src={image} alt='project_photo'/>)}
+                    </div>
                     <div className='projects_images_details_text'>
                         <p>
                             <i className="fas fa-check"></i>
@@ -174,18 +176,11 @@ class Projects extends Component {
                         <p>
                             <i className="fas fa-check"></i>
                             <span className='decorative'> Language: </span>
-                            {project.language.length > 1 ?
-                                <>
-                                    <img src={project.language[0]} alt='language'/>
-                                    <img src={project.language[1]} alt='language'/>
-                                </>
-                                :
-                                <img src={project.language} alt='language'/>
-                            }
+                            {project.language.map( (language, index) => <img key={index} src={language} alt='project_language'/>)}
                         </p>
                     </div>
                 </div>
-                <div className={`projects_images_description ${this.state.showProjectDetails ? "shownPage" : "hiddenPage"}`}>
+                <div className={`projects_images_description ${details ? "shownPage" : "hiddenPage"}`}>
                     <p>{project.description}</p>
                     <div className='projects_images_description_links'>
                         <button><a href={project.code}>Code</a></button>
@@ -198,31 +193,27 @@ class Projects extends Component {
     };
 
     render() {
+        const { showProjectDetails, clicked, hoverBackButton } = this.state;
+
         let buttonList;
-        this.state.showProjectDetails ? buttonList = this.backButtons() : buttonList = this.showButtons();
+        showProjectDetails ? buttonList = this.backButtons() : buttonList = this.showButtons();
         let projectsList;
-        this.state.showProjectDetails ? projectsList = this.projectDetails() : projectsList = this.buildList();
+        showProjectDetails ? projectsList = this.projectDetails() : projectsList = this.buildList();
         return (
             <>
                 <Contact/>
-                <section className={`projects background ${this.state.clicked && "back_to_home3"}`}>
-                    <h2 className={`${this.state.clicked && "fadeOut_background"}`}>Projects</h2>
-                    <div className={`fadeIn_background projects_images ${this.state.clicked && "fadeOut_background"}
-                    `}>
+                <section className={`projects background ${clicked && "back_to_home3"}`}>
+                    <h2 className={`${clicked ? "fade_in" : "fade_out"}`}>Projects</h2>
+                    <div className={`projects_images ${clicked ? "fade_out" : "fade_in"}`}>
                         {projectsList}
                     </div>
-                    <div className={`fadeIn_background projects_buttons ${this.state.clicked && "fadeOut_background"}`} >
-                        <div className='projects_buttons_small'></div>
-                        <div className='projects_buttons_big'></div>
-                        {buttonList}
-                        <div className='projects_buttons_big'></div>
-                        <div className='projects_buttons_small'></div>
-                    </div>
-                    <div className={`fadeIn_background go_back ${this.state.back ? "back"  : "stay"} ${this.state.clicked && "fadeOut_background"}`}
+                    {buttonList}
+                    <div className={`go_back ${hoverBackButton ? "back"  : "stay"} ${clicked ? "fade_out" : "fade_in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
-                        <span className={`${this.state.back ? "back"  : "stay"}`}></span>
+                        <span className={`${hoverBackButton ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
+                <CV/>
             </>
         )
     }

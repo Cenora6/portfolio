@@ -1,9 +1,10 @@
 @import "./../utils/variables.scss";
+@import "./../utils/mixins.scss";
 
 html {
   width: 100vw;
   height: 100vh;
-  background-color: #FFF;
+  background-color: $color-base;
   position: relative;
   overflow-x: hidden;
 }
@@ -17,36 +18,36 @@ article, aside, figcaption, figure, footer, header, nav, section {
 
 }
 h1, h2, h3, h4 {
-  text-shadow: 2px 2px 0 #272727, 4px 4px 0 #000000;
+  text-shadow: 2px 2px 0 $color-shadow, 4px 4px 0 $color-shadow-dark;
 }
 
 h1, h2, h3, h4, h5 {
   line-height: 1.25;
   z-index: 10;
-  color: #FFF;
+  color: $color-base;
   text-align: center;
   margin: 1rem 0;
 }
 
 h1 {
-  font-size: 5rem;
+  @include font-size(5);
 }
 
 h2 {
-  font-size: 3rem;
-  font-family: 'Cedarville Cursive', cursive;
+  @include font-size(3);
+  font-family: $font-title;
 }
 
 h3 {
-  font-size: 2rem;
+  @include font-size(2);
 }
 
 h4 {
-  font-size: 1rem;
+  @include font-size(1);
 }
 
 h5 {
-  font-size: 0.8rem;
+  @include font-size(.8);
 }
 
 a {
@@ -56,17 +57,17 @@ a {
 
 p {
   font-family: $font-base;
-  font-size: 1.1rem;
+  @include font-size(1.1);
   margin: 1rem 0;
-  color: #464648;
+  color: $color-shadow;
 
   .decorative {
     &:nth-of-type(even) {
-      color: #4A53D8;
+      color: $color-linkedin;
     }
 
     &:nth-of-type(odd) {
-      color: #6E93E8;
+      color: $color-facebook;
     }
   }
 }
@@ -100,30 +101,30 @@ section {
     width: 57%;
     height: 86%;
     z-index: 1;
-    opacity: 0.5;
-    background: #FFF;
+    @include opacity(.5);
+    background: $color-base;
   }
 }
 
 .go_back {
-  opacity: 0.8;
+  @include opacity(.8);
   position: absolute;
   z-index: 10;
   left: 0;
-  transform: translate(0, -30%);
+  @include translate(0, -30%);
   width: 4rem;
   height: 6rem;
-  border-left: solid 6rem #786FB8;
-  border-bottom: solid 6rem transparent;
-  border-top: solid 6rem transparent;
+  border-left: solid 6rem $color-skills;
+  border-bottom: solid 6rem $color-transparent;
+  border-top: solid 6rem $color-transparent;
   cursor: pointer;
-  transition: 3s;
+  @include transition(3s);
 
   &:hover {
-    border-left: solid 6rem #FFF;
+    border-left: solid 6rem $color-base;
 
     span {
-      border-right: solid 2rem #000;
+      border-right: solid 2rem $color-shadow-dark;
       left: -5rem;
     }
   }
@@ -133,23 +134,23 @@ section {
     bottom: -2rem;
     width: 2rem;
     height: 3rem;
-    border-right: solid 2rem #786FB8;
-    border-bottom: solid 2rem transparent;
-    border-top: solid 2rem transparent;
-    transition: 2s;
+    border-right: solid 2rem $color-skills;
+    border-bottom: solid 2rem $color-transparent;
+    border-top: solid 2rem $color-transparent;
+    @include transition(2s);
     left: 0;
   }
 }
 
 .back_to_home1, .back_to_home2, .back_to_home3 {
   &:before {
-    animation: backToHome 3s forwards;
+    @include animation(backToHome 3s forwards);
   }
 }
 
 .back_to_home1 {
   &:before {
-    transform-origin: bottom left;
+    @include transform-origin(bottom left);
     bottom: 8%;
     left: 21.5%;
   }
@@ -157,49 +158,50 @@ section {
 
 .back_to_home2 {
   &:before {
-    transform-origin: bottom;
+    @include transform-origin(bottom);
     bottom: 8%;
   }
 }
 
 .back_to_home3 {
   &:before {
-    transform-origin: bottom right;
+    @include transform-origin(bottom right);
     bottom: 8%;
     right: 21.5%;
   }
 }
 
-@keyframes backToHome {
+@include keyframes(backToHome) {
   to {
     width: 18%;
     height: 57%;
   }
 }
 
-.fadeIn_background {
-  animation: fadeIn 3s ease;
+.fade_in {
+  @include animation(fadeIn 3s ease);
 }
 
-.fadeOut_background {
-  animation: fadeOut 3s ease;
+.fade_out {
+  @include animation(fadeOut 3s ease);
 }
 
-@keyframes fadeIn {
+@include keyframes(fadeIn) {
   0% {
-    opacity: 0;
+    @include opacity(0);
   }
   100% {
-    opacity: 1;
+    @include opacity(1);
   }
 }
 
-@keyframes fadeOut {
+
+@include keyframes(fadeOut) {
   0% {
-    opacity: 1;
+    @include opacity(1);
   }
   100% {
-    opacity: 0;
+    @include opacity(0);
   }
 }
 
@@ -212,14 +214,13 @@ section {
     height: 1rem;
     bottom: -1rem;
     right: 0;
-    background-color: #fff;
-    color: #000;
+    background-color: $color-base;
     text-align: center;
     padding: 0.1rem 0;
     position: absolute;
     z-index: 15;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.6rem;
-    transition: opacity 1s ease-in-out;
+    font-family: $font-base;
+    @include font-size(.6);
+    @include transition(opacity 1s ease-in-out);
   }
 }

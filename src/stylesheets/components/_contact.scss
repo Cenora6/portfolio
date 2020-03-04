@@ -11,115 +11,115 @@
     cursor: pointer;
 
     &_main, &_single {
-      font-size: 1.5rem;
+      @include font-size (1.5);
       width: 4rem;
       height: 4rem;
       cursor: pointer;
       margin-left: 3rem;
       margin-top: 3rem;
       border-radius: 50%;
-      transition: transform 1s ease-out, opacity 1s ease-out, color 1s ease-out;
+      @include transition(transform 1s ease-out, opacity 1s ease-out, color 1s ease-out);
       position: absolute;
       top: 0;
       left: 0;
-      opacity: 0.8;
+      @include opacity(0.8);
       color: transparent;
 
       i {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        @include translate(-50%, -50%);
       }
     }
 
     .home {
-      background-color: #572EB9;
-      transform: translate(40%, 25%);
+      background-color: $color-home;
+      @include translate(40%, 25%);
       z-index: 4;
-      transition-duration: 0.3s;
+      @include transition(.3s);
     }
 
     .linkedin {
-      background-color: #4A53D8;
-      transform: translate(0, -40%);
+      background-color: $color-linkedin;
+      @include translate(0, -40%);
       z-index: 3;
-      transition-duration: 0.6s;
+      @include transition(.6s);
     }
 
     .facebook {
-      background-color: #6E93E8;
-      transform: translate(40%, -10%);
+      background-color: $color-facebook;
+      @include translate(40%, -10%);
       z-index: 2;
-      transition-duration: 0.9s;
+      @include transition(.9s);
     }
 
     .github {
-      background-color: #86C3ED;
-      transform: translate(-10%, 30%);
+      background-color: $color-github;
+      @include translate(-10%, 30%);
       z-index: 1;
-      transition-duration: 1.2s;
+      @include transition(1.2s);
     }
 
     .email {
-      background-color: #A7F1E1;
-      transform: translate(-30%, 0);
-      z-index: 0;
-      transition-duration: 1.5s;
+      background-color: $color-email;
+      @include translate(-30%, 0);
+      z-index: -1;
+      @include transition(1.5s);
     }
 
     .instagram {
-      background-color: #C4FFDA;
-      transform: translate(-40%, -30%);
-      z-index: -1;
-      transition-duration: 1.8s;
+      background-color: $color-instagram;
+      @include translate(-40%, -30%);
+      z-index: -2;
+      @include transition(1.8s);
     }
   }
 }
 
 .show_navigation {
   i {
-    transition: 1s;
-    color: white;
+    @include transition(1s);
+    color: $color-base;
     text-shadow: 2px 2px 0 #272727;
   }
 
   .home, .linkedin, .facebook, .github, .email, .instagram {
     &:hover {
-      transition-duration: 1s;
-      opacity: 1;
+      @include transition(1s);
+      @include opacity(1);
     }
   }
 
   .home {
-    transition-duration: 1s;
-    transform: translate(0, 0) scale(1.2, 1.2);
+    @include transition(1s);
+    @include transform(translate(0, 0) scale(1.2, 1.2));
   }
 
   .linkedin {
-    transform: translate(0, 80%);
+    @include translate(0, 80%);
   }
 
   .facebook {
-    transform: translate(0, 160%);
+    @include translate(0, 160%);
   }
 
   .github {
-    transform: translate(0, 240%);
+    @include translate(0, 240%);
   }
 
   .email {
-    transform: translate(0, 320%);
+    @include translate(0, 320%);
   }
 
   .instagram {
-    transform: translate(0, 400%);
+    @include translate(0, 400%);
   }
 }
 
 .hide_navigation {
   i {
-    transition: 1s;
-    color: transparent;
+    @include transition(1s);
+    color: $color-transparent;
   }
 }

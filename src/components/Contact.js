@@ -20,27 +20,27 @@ class Contact extends Component {
                             <i className="far fa-address-book"></i>
                         </span>
                         <span className="contact_circles_single linkedin">
-                            <a target="_blank" href="https://www.linkedin.com/in/aleksandra-gasid%C5%82o-8b0338190/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aleksandra-gasid%C5%82o-8b0338190/">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                         </span>
                         <span className="contact_circles_single facebook">
-                            <a target="_blank" href="https://www.facebook.com/Cenora06/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Cenora06/">
                                 <i className="fab fa-facebook"></i>
                             </a>
                         </span>
                         <span className="contact_circles_single github">
-                            <a target="_blank" href="https://github.com/Cenora6/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Cenora6/">
                                 <i className="fab fa-github"></i>
                             </a>
                         </span>
                         <span className="contact_circles_single email">
-                            <a target="_blank" href="mailto:aleksandra.gasidlo@gmail.com">
+                            <a target="_blank" rel="noopener noreferrer" href="mailto:aleksandra.gasidlo@gmail.com">
                                 <i className="fas fa-envelope"></i>
                             </a>
                         </span>
                         <span className="contact_circles_single instagram">
-                            <a target="_blank" href="https://www.instagram.com/wonthirst/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/wonthirst/">
                                 <i className="fab fa-instagram"></i>
                             </a>
                         </span>

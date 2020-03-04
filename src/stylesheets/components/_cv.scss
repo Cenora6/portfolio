@@ -4,47 +4,48 @@
   right: 0;
   width: 0;
   height: 0;
-  border-bottom: 12rem solid #272727;
-  border-left: 12rem solid transparent;
+  border-bottom: 12rem solid $color-shadow;
+  border-left: 12rem solid $color-transparent;
   transition: 2s;
   cursor: pointer;
+  z-index: 10;
 
   span {
     position: absolute;
     z-index: 12;
-    color: #FFF;
+    color: $color-base;
     text-align: center;
-    transition: 2s;
-    font-size: 0.8rem;
+    @include transition(2s);
+    @include font-size (0.8);
 
     &:first-of-type {
-      transform: rotate(0deg);
+      @include rotate(0);
       right: 3rem;
       bottom: -11rem;
     }
 
     &:nth-of-type(2) {
-      transform: rotate(-90deg);
+      @include rotate(-90);
       right: 0;
       bottom: -8rem;
     }
   }
 
   &:hover {
-    border-bottom: 14rem solid #272727;
-    border-left: 14rem solid transparent;
+    border-bottom: 14rem solid $color-shadow;
+    border-left: 14rem solid $color-transparent;
 
     span {
-      font-size: 1.2rem;
+      @include font-size (1.2);
 
       &:first-of-type {
-        transform: rotate(-45deg);
+        @include rotate(-45);
         right: 4rem;
         bottom: -10rem;
       }
 
       &:nth-of-type(2) {
-        transform: rotate(-45deg);
+        @include rotate(-45);
         right: 2rem;
         bottom: -7rem;
       }

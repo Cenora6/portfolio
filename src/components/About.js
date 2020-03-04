@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
+import CV from "./CV";
 
 class About extends Component {
     state = {
@@ -28,10 +29,10 @@ class About extends Component {
                 <Contact/>
                 <section className='about'>
                     <div className={`background ${this.state.clicked && "back_to_home1"}`}>
-                        <div className={`fadeIn_background about_title ${this.state.clicked && "fadeOut_background"}`}>
+                        <div className={`about_title ${this.state.clicked ? "fade_out" : "fade_in"}`}>
                             <div className='about_title_name'>
                                 <h1>Hello!</h1>
-                                <h2>I'm Aleksandra Gasidlo </h2>
+                                <h2>I'm Aleksandra Gasidlo</h2>
                                 <p>
                                     A<span className='decorative'> frontend developer </span>and
                                     <span className='decorative'> medical laboratory scientist </span>
@@ -43,7 +44,7 @@ class About extends Component {
                                 <span className='about_title_image_shape third'></span>
                             </div>
                         </div>
-                        <div className={`fadeIn_background about_description ${this.state.clicked && "fadeOut_background"}`}>
+                        <div className={`about_description ${this.state.clicked ? "fade_out" : "fade_in"}`}>
                             <p>
                                 I've started<span className='decorative'> programming </span>recently and discovered
                                 it's something I want to do for the rest of the life. Previously I was working as a
@@ -65,11 +66,12 @@ class About extends Component {
                             </p>
                         </div>
                     </div>
-                    <div className={`fadeIn_background go_back ${this.state.back ? "back"  : "stay"} ${this.state.clicked && "fadeOut_background"}`}
+                    <div className={`go_back ${this.state.back ? "back" : "stay"} ${this.state.clicked ? "fade_out" : "fade_in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
                         <span className={`${this.state.back ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
+                <CV/>
             </>
         )
     }

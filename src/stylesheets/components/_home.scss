@@ -27,10 +27,10 @@
 
     p {
       z-index: 10;
-      color: #FFF;
+      color: $color-base;
       font-family: $font-title;
-      font-size: 2rem;
-      text-shadow: 2px 2px 0 #272727;
+      @include font-size(2);
+      text-shadow: 2px 2px 0 $color-shadow;
       animation: type 4s steps(60, end);
       white-space: nowrap;
       overflow: hidden;
@@ -38,7 +38,7 @@
     }
 
     i {
-      color: #FFF;
+      color: $color-base;
     }
   }
 
@@ -66,7 +66,7 @@
         width: 30.3%;
         position: relative;
         cursor: pointer;
-        transition: 2s;
+        @include transition(2s);
 
         &:before {
           content: "";
@@ -75,18 +75,18 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: #FFF url("./../../assets/pattern.png") no-repeat;
+          background: $color-base url("./../../assets/pattern.png") no-repeat;
           background-size: cover;
-          opacity: 0.3;
+          @include opacity(.3);
           filter: grayscale(100%);
-          border: 0.1rem double #FFF;
+          border: 0.1rem double $color-base;
         }
 
         span {
           z-index: 20;
           padding: 0.5rem;
-          color: #FFF;
-          text-shadow: 2px 2px 2px #000;
+          color: $color-base;
+          text-shadow: 2px 2px 2px $color-shadow;
         }
       }
     }
@@ -94,52 +94,53 @@
 }
 
 .hidden {
-  opacity: 1;
+  @include opacity(1);
 
   &:before {
     z-index: 20;
-    background: #FFF url("./../../assets/pattern.png") no-repeat;
+    background: $color-base url("./../../assets/pattern.png") no-repeat;
     background-size: cover;
-    transition: 2s;
-    opacity: 0.4;
+    @include transition(2s);
+    @include opacity(.4);
     filter: grayscale(100%);
   }
 
   span {
-    font-size: 0.8rem;
-    transform: rotate(0deg) translate(0rem, 0rem);
-    transition: 2s ease-in-out;
+    @include font-size(.8);
+    @include rotate(0);
+    @include translate(0, 0);
+    @include transition(2s ease-in-out);
   }
 }
 
 .first_box {
   &:before {
-    transform: scaleX(-1);
+    @include scaleX(-1);
   }
 }
 
 .second_box.hidden {
   &:before {
-    background: #FFF url("./../../assets/pattern2.png") no-repeat center;
+    background: $color-base url("./../../assets/pattern2.png") no-repeat center;
     background-size: cover;
   }
 }
 .hover {
-  opacity: 0.8;
+  @include opacity(.8);
 
   &:before {
     z-index: 20;
     background: url("./../../assets/pattern.png") no-repeat left bottom;
     background-size: cover;
-    transition: 2s;
-    opacity: 1;
+    @include transition(2s);
+    @include opacity(1);
     filter: grayscale(50%);
   }
 
   span {
-    font-size: 2rem;
-    transform: rotate(90deg) translate(0rem, -8rem);
-    transition: 2s ease-in-out;
+    @include font-size(2);
+    @include transform(rotate(90deg) translate(0, -8rem));
+    @include transition(2s ease-in-out);
   }
 }
 
@@ -152,11 +153,11 @@
 
 .transition1, .transition2, .transition3 {
   position: absolute;
-  opacity: 0;
-  background: #FFF;
+  @include opacity(0);
+  background: $color-base;
   height: 64.5%;
   width: 30%;
-  transition: 3s;
+  @include transition(3s);
   bottom: 0;
 }
 
@@ -176,13 +177,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  @include opacity(.5);
   z-index: 10;
   left: 0;
   bottom: 0;
 }
 
-@keyframes type {
+@include keyframes (type) {
   from {
     width: 0;
   }

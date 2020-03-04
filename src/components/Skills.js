@@ -14,6 +14,7 @@ import ubuntu from "./../assets/icons/ubuntu.png"
 import babel from "./../assets/icons/babel.png"
 import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
+import CV from "./CV";
 
 class Skills extends Component {
     state = {
@@ -57,7 +58,7 @@ class Skills extends Component {
             <>
                 <Contact/>
                 <section className={`skills background ${this.state.clicked && "back_to_home2"}`}>
-                    <div className={`fadeIn_background skills_section ${this.state.clicked && "fadeOut_background"}`}>
+                    <div className={`skills_section ${this.state.clicked ? "fade_out" : "fade_in"}`}>
                         <h2>Skills</h2>
                         <div className='skills_section_images'>
                             <div className='skills_section_images_tools'>
@@ -129,11 +130,12 @@ class Skills extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className={`fadeIn_background go_back ${this.state.back ? "back"  : "stay"} ${this.state.clicked && "fadeOut_background"}`}
+                    <div className={`go_back ${this.state.back ? "back"  : "stay"}  ${this.state.clicked ? "fade_out" : "fade_in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
                         <span className={`${this.state.back ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
+                <CV/>
             </>
         )
     }
