@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
 import CV from "./CV";
+import selfPhoto from "./../assets/photo.png";
+import border from "./../assets/border.png";
 
 class About extends Component {
     state = {
@@ -42,6 +44,8 @@ class About extends Component {
                                 <span className='about_title_image_shape first'></span>
                                 <span className='about_title_image_shape second'></span>
                                 <span className='about_title_image_shape third'></span>
+                                <img src={border} alt='border'/>
+                                <img src={selfPhoto} alt='self_photo'/>
                             </div>
                         </div>
                         <div className={`about_description ${this.state.clicked ? "fade_out" : "fade_in"}`}>
