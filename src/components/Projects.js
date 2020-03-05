@@ -32,69 +32,69 @@ class Projects extends Component {
     };
 
     nextPage = (e, i) => {
-        const { projectsPerPage } = this.state;
-        const projectsNumber = Math.floor(projects.link.length / projectsPerPage);
-
+        const { changePage } = this.state;
         this.setState({
-            changePage: !this.state.changePage,
-        });
-
-        (i <= projectsNumber) ?
-            setTimeout(() => {
-                this.setState({
-                    currentPage: i + 1,
-                    changePage: !this.state.changePage,
-                })
-            },700)
-            :
-            this.setState({
-                currentPage: i,
-            });
-    };
-
-    previousPage = (e, i) => {
-        this.setState({
-            changePage: !this.state.changePage,
-        });
-
-        (i > 1) ?
-            setTimeout(() => {
-                this.setState({
-                    currentPage: i - 1,
-                    changePage: !this.state.changePage,
-                })
-            },700)
-            :
-            this.setState({
-                currentPage: i,
-            });
-    };
-
-    backToProjects = () => {
-        this.setState({
-            details: !this.state.details,
+            changePage: !changePage,
         });
 
         setTimeout(() => {
             this.setState({
-                showProjectDetails: !this.state.showProjectDetails,
+                currentPage: i + 1,
+                changePage: false,
+            })
+        },700)
+    };
+
+    previousPage = (e, i) => {
+        const { changePage } = this.state;
+        this.setState({
+            changePage: !changePage,
+        });
+
+        setTimeout(() => {
+            this.setState({
+                currentPage: i - 1,
+                changePage: false,
+            })
+        },700)
+    };
+
+    backToProjects = () => {
+        const { details, showProjectDetails } = this.state;
+        this.setState({
+            details: !details,
+        });
+
+        setTimeout(() => {
+            this.setState({
+                showProjectDetails: !showProjectDetails,
             });
         },700)
     };
 
     showButtons = () => {
-        const projectsNumber = Math.floor(projects.link.length / this.state.projectsPerPage);
+        const { projectsPerPage, currentPage, clicked, changePage } = this.state;
+        const projectsNumber = Math.ceil(projects.link.length / projectsPerPage);
+        const previousButtonStyle = {
+            display: currentPage === 1 && "none",
+        };
+        const nextButtonStyle = {
+            display: currentPage === projectsNumber && "none",
+        };
+
         let buttons = [];
         for (let i = 1; i <= projectsNumber + 1; i++) {
-            this.state.currentPage === i && (
+            currentPage === i && (
                 buttons.push (
-                    <div key={i} className={`projects__buttons ${this.state.changePage ? "projects__buttons--hide" : "projects__buttons--show"} 
-                     ${this.state.clicked ? "fade--out" : "fade--in"} `} >
+                    <div key={i} className={`projects__buttons ${changePage ?  "fade--out" : "fade--in"} 
+                     ${clicked ? "fade--out" : "fade--in"}`}>
                         <span className='projects__buttons__small'></span>
                         <span className='projects__buttons__big'></span>
-                        <i className="fas fa-angle-left " onClick={ (e) => this.previousPage(e, i) }></i>
-                        <button className={`${this.state.currentPage === i ? "projects__buttons--active" : ""}`}>{i}</button>
-                        <i className="fas fa-angle-right" onClick={ (e) => this.nextPage(e, i)}></i>
+                        <i className="fas fa-angle-left " onClick={ (e) => this.previousPage(e, i)}
+                           style={previousButtonStyle}></i>
+                        <button className={`${currentPage === i ? "projects__buttons--active" : ""}`}>{i}</button>
+                        <i className="fas fa-angle-right" onClick={ (e) => this.nextPage(e, i)}
+                           style={nextButtonStyle}></i>
                         <span className='projects__buttons__big'></span>
                         <span className='projects__buttons__small'></span>
                     </div>
@@ -105,12 +105,13 @@ class Projects extends Component {
     };
 
     backButtons = () => {
+        const { clicked, changePage } = this.state;
         return (
-            <div className={`projects__buttons ${this.state.changePage ? "projects__buttons--hide" : "projects__buttons--show"}
-            ${this.state.clicked ? "fade--out" : "fade--in"} `} >
+            <div className={`projects__buttons ${changePage ? "fade--out" : "fade--in"}
+            ${clicked ? "fade--out" : "fade--in"} `} >
                 <span className='projects__buttons__small'></span>
                 <span className='projects__buttons__big'></span>
-                <button className={`back projects__buttons--active ${this.state.details ? "fade--in" : "fade--out"}`}
+                <button className={`back projects__buttons--active`}
                         onClick={this.backToProjects}>back</button>
                 <span className='projects__buttons__big'></span>
                 <span className='projects__buttons__small'></span>
@@ -119,22 +120,23 @@ class Projects extends Component {
     };
 
     showProjectDetails = (e) => {
-        (this.state.currentPage === 1) ?
+        const { showProjectDetails, details, currentPage, changePage } = this.state;
+        (currentPage === 1) ?
             this.setState({
-                changePage: !this.state.changePage,
+                changePage: !changePage,
                 activeProject: e.target.id,
             })
             :
             this.setState({
-                changePage: !this.state.changePage,
+                changePage: !changePage,
                 activeProject: parseInt(e.target.id) + 9,
             });
 
         setTimeout(() => {
             this.setState({
-                changePage: !this.state.changePage,
-                showProjectDetails: !this.state.showProjectDetails,
-                details: !this.state.details,
+                changePage: false,
+                showProjectDetails: !showProjectDetails,
+                details: !details,
             });
         },700)
     };
@@ -153,7 +155,8 @@ class Projects extends Component {
                     return (
                         <img key={index} id={index} className={`projects__images__single 
                         ${changePage ? "projects__images--hide" : "projects__images--show"}`}
-                             src={project} alt="projects" onClick={(e) => this.showProjectDetails(e, index)}/>
+                             src={project} alt="projects"
+                             onClick={(e) => this.showProjectDetails(e, index)}/>
                     )
                 })}
             </>
@@ -167,7 +170,8 @@ class Projects extends Component {
             <>
                 <div className={`projects__images__details ${details ? "projects__images--show" : "projects__images--hide"}`}>
                     <div className='projects__images__details__photos'>
-                        {project.image.map( (image, index) => <img key={index} src={image} alt='project__photo'/>)}
+                        {project.image.map( (image, index) =>
+                            <img key={index} src={image} alt='project__photo'/>)}
                     </div>
                     <div className='projects__images__details__text'>
                         <p>
@@ -177,7 +181,8 @@ class Projects extends Component {
                         <p>
                             <i className="fas fa-check"></i>
                             <span className='decorative'> Language: </span>
-                            {project.language.map( (language, index) => <img key={index} src={language} alt='project__language'/>)}
+                            {project.language.map( (language, index) =>
+                                <img key={index} src={language} alt='project__language'/>)}
                         </p>
                     </div>
                 </div>

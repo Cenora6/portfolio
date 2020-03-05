@@ -26,12 +26,13 @@ class About extends Component {
     };
 
     render() {
+        const { back, clicked } = this.state;
         return (
             <>
                 <Contact/>
                 <section className='about'>
-                    <div className={`background ${this.state.clicked && "back--to--home1"}`}>
-                        <div className={`about__title ${this.state.clicked ? "fade--out" : "fade--in"}`}>
+                    <div className={`background ${clicked && "back--to--home1"}`}>
+                        <div className={`about__title ${clicked ? "fade--out" : "fade--in"}`}>
                             <div className='about__title__name'>
                                 <h1>Hello!</h1>
                                 <h2>I'm Aleksandra Gasidlo</h2>
@@ -48,7 +49,7 @@ class About extends Component {
                                 <img src={selfPhoto} alt='self__photo'/>
                             </div>
                         </div>
-                        <div className={`about__description ${this.state.clicked ? "fade--out" : "fade--in"}`}>
+                        <div className={`about__description ${clicked ? "fade--out" : "fade--in"}`}>
                             <p>
                                 I've started<span className='decorative'> programming </span>recently and discovered
                                 it's something I want to do for the rest of the life. Previously I was working as a
@@ -70,9 +71,9 @@ class About extends Component {
                             </p>
                         </div>
                     </div>
-                    <div className={`go--back ${this.state.back ? "back" : "stay"} ${this.state.clicked ? "fade--out" : "fade--in"}`}
+                    <div className={`go--back ${back ? "back" : "stay"} ${clicked ? "fade--out" : "fade--in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
-                        <span className={`${this.state.back ? "back"  : "stay"}`}></span>
+                        <span className={`${back ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
                 <CV/>

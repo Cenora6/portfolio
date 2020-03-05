@@ -56,7 +56,7 @@ const projectsDetails = [
         image: [mobile1],
         details: "HTML5, Sass, React, firebase",
         language: [english],
-        description: "An app, where you can find some driving tips and take a quiz to check your driving knowledge.",
+        description: "An app, where you can find some driving tips and take a quiz to check your driving knowledge, designed for mobile users. You can register and use your own account, post questions or take quizes and collect the points.",
         code: "https://github.com/Cenora6/DRV-Driving-Experience",
         live: "https://cenora6.github.io/DRV-Driving-Experience/#/"
     },
@@ -65,7 +65,7 @@ const projectsDetails = [
         image: [mobile2, desktop2],
         details: "HTML5, CSS, jQuery, webpack",
         language: [english],
-        description: "To Do List, where you can write your own tasks to do, delete them or mark as 'done'. You can also check the progress bar of your To Do List.",
+        description: "To Do List, where you can write your own tasks to do, delete them or mark as 'done'. You can also check the progress bar of your list.",
         code: "https://github.com/Cenora6/To-Do-List",
         live: "https://cenora6.github.io/To-Do-List/"
     },
@@ -74,7 +74,7 @@ const projectsDetails = [
         image: [mobile3, desktop3],
         details: "HTML5, CSS, jQuery, Webpack",
         language: [english],
-        description: "'Order Your Pizza' is a website, where you can choose your pizza and calculate its price.",
+        description: "'Order Your Pizza' is a website, where you can choose your pizza and calculate its price. Every step's choice is saved to the sessionStorage.",
         code: "https://github.com/Cenora6/Order-Your-Pizza",
         live: "https://cenora6.github.io/Order-Your-Pizza/"
     },
@@ -92,7 +92,7 @@ const projectsDetails = [
         image: [mobile5, desktop5],
         details: "HTML5, CSS, SASS, React, Firebase",
         language: [english, polish],
-        description: "An app, which you can use to donate your old books, games, clothes etc. to others.",
+        description: "An app, which you can use to donate your old books, games, clothes etc. to others. After registering your account, you can either check your statistics or fill another donation form. This website is translated to polish and english language.",
         code: "https://github.com/Cenora6/Start-Helping-App",
         live: "https://cenora6.github.io/Start-Helping-App/#/"
     },
@@ -100,7 +100,7 @@ const projectsDetails = [
         image: [mobile6, desktop6],
         details: "HTML5, CSS, jQuery, AJAX",
         language: [english],
-        description: "This application can be used to find photos from the NASA Image Library. If you click on the photos, they will appear in original sizes.",
+        description: "This application can be used to find photos from the NASA Image Library. If you click on the photos, they will appear in their original sizes.",
         code: "https://github.com/Cenora6/NASA-API-Challenge",
         live: "https://cenora6.github.io/NASA-API-Challenge/"
     },
@@ -108,7 +108,7 @@ const projectsDetails = [
         image: [mobile7, desktop7],
         details: "HTML5, SCSS, Vanilla JavaScript",
         language: [english],
-        description: "An example of the online shop's website, this time with mobile version.",
+        description: "An example of the online shop's website, designed for mobile and desktop users. The calculator page is used to calculate the price of the service.",
         code: "https://github.com/Cenora6/BestShop_WS_first_RWD",
         live: "https://cenora6.github.io/BestShop_WS_first_RWD/"
     },
@@ -117,7 +117,7 @@ const projectsDetails = [
         image: [desktop8],
         details: "HTML5, CSS, SASS, React, Webpack, Firebase",
         language: [polish],
-        description: "A quiz, used to determine a travel destination. If you have ever wondered where to go on your holiday, this quiz will choose for you your travel destination!",
+        description: "A quiz, used to determine a travel destination. If you have ever wondered where to go on your holiday, this quiz will choose for you your travel destination! It's possible to create your own destination with photos. All results and your own places are stored in the history, where you can check them as visited.",
         code: "https://github.com/Cenora6/Your_Travel_Destination_-QUIZ-",
         live: "https://cenora6.github.io/Your_Travel_Destination_-QUIZ-/#/"
     },
@@ -126,7 +126,7 @@ const projectsDetails = [
         image: [desktop9],
         details: "HTML5, CSS, Vanilla JavaScript",
         language: [english],
-        description: "Help the kitty eat all the cupcakes! :)",
+        description: "Help the kitty eat all the cupcakes! :) A simple game, where you collect cupcakes using keyboard's arrows.",
         code: "https://github.com/Cenora6/Furry-Game",
         live: "https://cenora6.github.io/Furry-Game/"
     },
