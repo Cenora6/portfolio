@@ -3,7 +3,7 @@
   h2 {
   }
 
-  &_images {
+  &__images {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -14,7 +14,15 @@
     position: relative;
     margin: 1rem 0;
 
-    &_single {
+    &--show {
+      @include animation(slide-from-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both);
+    }
+
+    &--hide {
+      @include animation(slide-to-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both);
+    }
+
+    &__single {
       display: flex;
       margin: 0.5rem;
       align-items: center;
@@ -44,13 +52,13 @@
       }
     }
 
-    &_details {
+    &__details {
       display: flex;
       width: 100%;
       position: relative;
       bottom: 10rem;
 
-      &_photos {
+      &__photos {
         display: flex;
         justify-content: space-between;
         align-content: center;
@@ -77,7 +85,7 @@
 
       }
 
-      &_text {
+      &__text {
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -112,7 +120,7 @@
       }
     }
 
-    &_description {
+    &__description {
       margin-top: 2rem;
       width: 100%;
       height: 10rem;
@@ -137,7 +145,7 @@
         height: 50%;
       }
 
-      &_links {
+      &__links {
         height: 10%;
         display: flex;
         justify-content: flex-end;
@@ -164,7 +172,7 @@
     }
   }
 
-  &_buttons {
+  &__buttons {
     display: flex;
     border-radius: 1rem;
     z-index: 10;
@@ -177,7 +185,7 @@
       border-radius: 50%;
     }
 
-    .active {
+    &--active {
       @include transition(2s);
       background: $color-home;
       @include font-size(1);
@@ -193,18 +201,18 @@
       }
     }
 
-    &_big, &_small {
+    &__big, &__small {
       background: $color-box;
       border-radius: 50%;
       margin: 0 1rem;
     }
 
-    &_big {
+    &__big {
       width: 2rem;
       height: 2rem;
     }
 
-    &_small {
+    &__small {
       width: 1rem;
       height: 1rem;
       margin: 0.5rem;
@@ -223,20 +231,12 @@
   }
 }
 
-.show_buttons {
+.show--page {
   @include animation(fadeIn .7s ease);
 }
 
-.hide_buttons {
+.hide--page {
   @include animation(fadeOut .7s ease);
-}
-
-.shownPage {
-  @include animation(slide-from-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both);
-}
-
-.hiddenPage {
-  @include animation(slide-to-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both);
 }
 
 @include keyframes (slide-from-top) {

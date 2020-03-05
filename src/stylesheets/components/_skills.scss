@@ -1,6 +1,6 @@
 .skills {
 
-  &_section {
+  &__section {
     z-index: 11;
     display: flex;
     flex-direction: column;
@@ -12,14 +12,14 @@
       margin-bottom: 3rem;
     }
 
-    &_images {
+    &__images {
       display: flex;
       justify-content: center;
       align-content: center;
       height: 100%;
       width: 100%;
 
-      &_tools {
+      &__tools {
         margin: 0 1rem;
         width: 100%;
         display: flex;
@@ -58,7 +58,7 @@
           }
         }
 
-        &_single {
+        &__single {
           margin: 2rem 0;
         }
       }

@@ -1,13 +1,13 @@
 .about {
 
-  &_title {
+  &__title {
     width: 50%;
     z-index: 11;
 
-    &_image {
+    &__image {
       z-index: 11;
 
-      &_shape {
+      &__shape {
         z-index: 11;
         position: absolute;
         top: 10%;
@@ -52,7 +52,7 @@
       }
     }
 
-    &_name {
+    &__name {
 
       h1, h2, p {
         @include animation(type 4s steps(60, end));
@@ -80,7 +80,7 @@
     }
   }
 
-  &_description {
+  &__description {
     z-index: 11;
     display: flex;
     flex-direction: column;

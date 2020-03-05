@@ -30,9 +30,9 @@ class About extends Component {
             <>
                 <Contact/>
                 <section className='about'>
-                    <div className={`background ${this.state.clicked && "back_to_home1"}`}>
-                        <div className={`about_title ${this.state.clicked ? "fade_out" : "fade_in"}`}>
-                            <div className='about_title_name'>
+                    <div className={`background ${this.state.clicked && "back--to--home1"}`}>
+                        <div className={`about__title ${this.state.clicked ? "fade--out" : "fade--in"}`}>
+                            <div className='about__title__name'>
                                 <h1>Hello!</h1>
                                 <h2>I'm Aleksandra Gasidlo</h2>
                                 <p>
@@ -40,15 +40,15 @@ class About extends Component {
                                     <span className='decorative'> medical laboratory scientist </span>
                                 </p>
                             </div>
-                            <div className='about_title_image'>
-                                <span className='about_title_image_shape first'></span>
-                                <span className='about_title_image_shape second'></span>
-                                <span className='about_title_image_shape third'></span>
+                            <div className='about__title__image'>
+                                <span className='about__title__image__shape first'></span>
+                                <span className='about__title__image__shape second'></span>
+                                <span className='about__title__image__shape third'></span>
                                 <img src={border} alt='border'/>
-                                <img src={selfPhoto} alt='self_photo'/>
+                                <img src={selfPhoto} alt='self__photo'/>
                             </div>
                         </div>
-                        <div className={`about_description ${this.state.clicked ? "fade_out" : "fade_in"}`}>
+                        <div className={`about__description ${this.state.clicked ? "fade--out" : "fade--in"}`}>
                             <p>
                                 I've started<span className='decorative'> programming </span>recently and discovered
                                 it's something I want to do for the rest of the life. Previously I was working as a
@@ -70,7 +70,7 @@ class About extends Component {
                             </p>
                         </div>
                     </div>
-                    <div className={`go_back ${this.state.back ? "back" : "stay"} ${this.state.clicked ? "fade_out" : "fade_in"}`}
+                    <div className={`go--back ${this.state.back ? "back" : "stay"} ${this.state.clicked ? "fade--out" : "fade--in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
                         <span className={`${this.state.back ? "back"  : "stay"}`}></span>
                     </div>

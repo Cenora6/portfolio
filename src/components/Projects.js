@@ -88,15 +88,15 @@ class Projects extends Component {
         for (let i = 1; i <= projectsNumber + 1; i++) {
             this.state.currentPage === i && (
                 buttons.push (
-                    <div key={i} className={`projects_buttons ${this.state.changePage ? "hide_buttons" : "show_buttons"} 
-                     ${this.state.clicked ? "fade_out" : "fade_in"} `} >
-                        <span className='projects_buttons_small'></span>
-                        <span className='projects_buttons_big'></span>
+                    <div key={i} className={`projects__buttons ${this.state.changePage ? "projects__buttons--hide" : "projects__buttons--show"} 
+                     ${this.state.clicked ? "fade--out" : "fade--in"} `} >
+                        <span className='projects__buttons__small'></span>
+                        <span className='projects__buttons__big'></span>
                         <i className="fas fa-angle-left " onClick={ (e) => this.previousPage(e, i) }></i>
-                        <button className={`buttons ${this.state.currentPage === i ? "active" : ""}`}>{i}</button>
+                        <button className={`${this.state.currentPage === i ? "projects__buttons--active" : ""}`}>{i}</button>
                         <i className="fas fa-angle-right" onClick={ (e) => this.nextPage(e, i)}></i>
-                        <span className='projects_buttons_big'></span>
-                        <span className='projects_buttons_small'></span>
+                        <span className='projects__buttons__big'></span>
+                        <span className='projects__buttons__small'></span>
                     </div>
                 )
             )
@@ -106,13 +106,14 @@ class Projects extends Component {
 
     backButtons = () => {
         return (
-            <div className={`projects_buttons ${this.state.changePage ? "hide_buttons" : "show_buttons"}
-            ${this.state.clicked ? "fade_out" : "fade_in"} `} >
-                <span className='projects_buttons_small'></span>
-                <span className='projects_buttons_big'></span>
-                <button className={`back active ${this.state.details ? "fade_in" : "fade_out"}`} onClick={this.backToProjects}>back</button>
-                <span className='projects_buttons_big'></span>
-                <span className='projects_buttons_small'></span>
+            <div className={`projects__buttons ${this.state.changePage ? "projects__buttons--hide" : "projects__buttons--show"}
+            ${this.state.clicked ? "fade--out" : "fade--in"} `} >
+                <span className='projects__buttons__small'></span>
+                <span className='projects__buttons__big'></span>
+                <button className={`back projects__buttons--active ${this.state.details ? "fade--in" : "fade--out"}`}
+                        onClick={this.backToProjects}>back</button>
+                <span className='projects__buttons__big'></span>
+                <span className='projects__buttons__small'></span>
             </div>
         )
     };
@@ -150,8 +151,9 @@ class Projects extends Component {
             <>
                 {visibleProjects.map( (project, index) => {
                     return (
-                        <img key={index} id={index} className={`projects_images_single ${changePage ? "hiddenPage" : "shownPage"}`} src={project} alt="projects"
-                             onClick={(e) => this.showProjectDetails(e, index)}/>
+                        <img key={index} id={index} className={`projects__images__single 
+                        ${changePage ? "projects__images--hide" : "projects__images--show"}`}
+                             src={project} alt="projects" onClick={(e) => this.showProjectDetails(e, index)}/>
                     )
                 })}
             </>
@@ -159,16 +161,15 @@ class Projects extends Component {
     };
 
     projectDetails = () => {
-        console.log(this.state.showProjectDetails)
         const { activeProject, details } = this.state;
         const project = projectsDetails[activeProject];
         return (
             <>
-                <div className={`projects_images_details ${details ? "shownPage" : "hiddenPage"}`}>
-                    <div className='projects_images_details_photos'>
-                        {project.image.map( (image, index) => <img key={index} src={image} alt='project_photo'/>)}
+                <div className={`projects__images__details ${details ? "projects__images--show" : "projects__images--hide"}`}>
+                    <div className='projects__images__details__photos'>
+                        {project.image.map( (image, index) => <img key={index} src={image} alt='project__photo'/>)}
                     </div>
-                    <div className='projects_images_details_text'>
+                    <div className='projects__images__details__text'>
                         <p>
                             <i className="fas fa-check"></i>
                             <span className='decorative'> Used: </span> {project.details}
@@ -176,13 +177,13 @@ class Projects extends Component {
                         <p>
                             <i className="fas fa-check"></i>
                             <span className='decorative'> Language: </span>
-                            {project.language.map( (language, index) => <img key={index} src={language} alt='project_language'/>)}
+                            {project.language.map( (language, index) => <img key={index} src={language} alt='project__language'/>)}
                         </p>
                     </div>
                 </div>
-                <div className={`projects_images_description ${details ? "shownPage" : "hiddenPage"}`}>
+                <div className={`projects__images__description ${details ? "projects__images--show" : "projects__images--hide"}`}>
                     <p>{project.description}</p>
-                    <div className='projects_images_description_links'>
+                    <div className='projects__images__description__links'>
                         <button><a href={project.code}>Code</a></button>
                         <button><a href={project.live}>Live</a></button>
                     </div>
@@ -202,13 +203,13 @@ class Projects extends Component {
         return (
             <>
                 <Contact/>
-                <section className={`projects background ${clicked && "back_to_home3"}`}>
-                    <h2 className={`${clicked ? "fade_in" : "fade_out"}`}>Projects</h2>
-                    <div className={`projects_images ${clicked ? "fade_out" : "fade_in"}`}>
+                <section className={`projects background ${clicked && "back--to--home3"}`}>
+                    <h2 className={`${clicked ? "fade--out" : "fade--in"}`}>Projects</h2>
+                    <div className={`projects__images ${clicked ? "fade--out" : "fade--in"}`}>
                         {projectsList}
                     </div>
                     {buttonList}
-                    <div className={`go_back ${hoverBackButton ? "back"  : "stay"} ${clicked ? "fade_out" : "fade_in"}`}
+                    <div className={`go--back ${hoverBackButton ? "back"  : "stay"} ${clicked ? "fade--out" : "fade--in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
                         <span className={`${hoverBackButton ? "back"  : "stay"}`}></span>
                     </div>

@@ -57,13 +57,13 @@ class Skills extends Component {
         return (
             <>
                 <Contact/>
-                <section className={`skills background ${this.state.clicked && "back_to_home2"}`}>
-                    <div className={`skills_section ${this.state.clicked ? "fade_out" : "fade_in"}`}>
+                <section className={`skills background ${this.state.clicked && "back--to--home2"}`}>
+                    <div className={`skills__section ${this.state.clicked ? "fade--out" : "fade--in"}`}>
                         <h2>Skills</h2>
-                        <div className='skills_section_images'>
-                            <div className='skills_section_images_tools'>
+                        <div className='skills__section__images'>
+                            <div className='skills__section__images__tools'>
                                 <h5>Front End</h5>
-                                <article className='skills_section_images_tools_single'>
+                                <article className='skills__section__images__tools__single'>
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='css'>
                                         <img src={css} alt='css'/>
                                         <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "css" ? "0.5" : "0"}`}}>CSS3</span>
@@ -94,14 +94,14 @@ class Skills extends Component {
                                     </div>
                                 </article>
                                 <h5>Back End</h5>
-                                <article className='skills_section_images_tools_single'>
+                                <article className='skills__section__images__tools__single'>
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='firebase'>
                                         <img src={firebase} alt='firebase'/>
                                         <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "firebase" ? "0.5" : "0"}`}}>Firebase</span>
                                     </div>
                                 </article>
                                 <h5>Tools/other</h5>
-                                <article className='skills_section_images_tools_single'>
+                                <article className='skills__section__images__tools__single'>
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='git'>
                                         <img src={git} alt='git'/>
                                         <span className="tooltiptext" style={{opacity: `${this.state.tooltipTitle === "git" ? "0.5" : "0"}`}}>Git</span>
@@ -130,7 +130,7 @@ class Skills extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className={`go_back ${this.state.back ? "back"  : "stay"}  ${this.state.clicked ? "fade_out" : "fade_in"}`}
+                    <div className={`go--back ${this.state.back ? "back"  : "stay"}  ${this.state.clicked ? "fade--out" : "fade--in"}`}
                          onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
                         <span className={`${this.state.back ? "back"  : "stay"}`}></span>
                     </div>

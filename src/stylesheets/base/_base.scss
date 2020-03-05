@@ -106,7 +106,7 @@ section {
   }
 }
 
-.go_back {
+.go--back {
   @include opacity(.8);
   position: absolute;
   z-index: 10;
@@ -142,13 +142,13 @@ section {
   }
 }
 
-.back_to_home1, .back_to_home2, .back_to_home3 {
+.back--to--home1, .back--to--home2, .back--to--home3 {
   &:before {
     @include animation(backToHome 3s forwards);
   }
 }
 
-.back_to_home1 {
+.back--to--home1 {
   &:before {
     @include transform-origin(bottom left);
     bottom: 8%;
@@ -156,14 +156,14 @@ section {
   }
 }
 
-.back_to_home2 {
+.back--to--home2 {
   &:before {
     @include transform-origin(bottom);
     bottom: 8%;
   }
 }
 
-.back_to_home3 {
+.back--to--home3 {
   &:before {
     @include transform-origin(bottom right);
     bottom: 8%;
@@ -178,11 +178,11 @@ section {
   }
 }
 
-.fade_in {
+.fade--in {
   @include animation(fadeIn 3s ease);
 }
 
-.fade_out {
+.fade--out {
   @include animation(fadeOut 3s ease);
 }
 

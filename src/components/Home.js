@@ -69,8 +69,8 @@ class Home extends Component {
             <>
                 <Contact/>
                 <section className='header'>
-                    <div className='header_background'>
-                        <div className={`header_title ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade_out" : "fade_in"}`}>
+                    <div className='header__background'>
+                        <div className={`header__title ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade--out" : "fade--in"}`}>
                             <h1>Aleksandra Gasidlo</h1>
                             <p>
                                 <i className="fas fa-vial"></i> Medical Laboratory Scientist.
@@ -79,17 +79,17 @@ class Home extends Component {
                                 <i className="fas fa-code"></i> Front-end Developer.
                             </p>
                         </div>
-                        <div className={`header_links ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade_out" : "fade_in"}`}>
-                            <ul className='header_links_list'>
-                                <li className={`header_links_list_single first_box ${this.state.link === "about" && this.state.hoverSection ? "hover" : "hidden"}`}
+                        <div className={`header__links ${(this.state.clicked1 || this.state.clicked2 || this.state.clicked3) ? "fade--out" : "fade--in"}`}>
+                            <ul className='header__links__list'>
+                                <li className={`header__links__list__single first__box ${this.state.link === "about" && this.state.hoverSection ? "hover" : "hidden"}`}
                                     id='about' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToAboutMe}>
                                     <span>About Me</span>
                                 </li>
-                                <li className={`header_links_list_single second_box ${this.state.link === "skills" && this.state.hoverSection ? "hover" : "hidden"}`}
+                                <li className={`header__links__list__single second__box ${this.state.link === "skills" && this.state.hoverSection ? "hover" : "hidden"}`}
                                     id='skills' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToSkills}>
                                     <span>My Skills</span>
                                 </li>
-                                <li className={`header_links_list_single ${this.state.link === "projects" && this.state.hoverSection ? "hover" : "hidden"}`}
+                                <li className={`header__links__list__single ${this.state.link === "projects" && this.state.hoverSection ? "hover" : "hidden"}`}
                                     id='projects' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToProjects}>
                                     <span>My Projects</span>
                                 </li>
