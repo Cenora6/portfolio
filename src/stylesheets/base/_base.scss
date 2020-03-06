@@ -6,7 +6,7 @@ html {
   height: 100vh;
   background-color: $color-base;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -174,7 +174,7 @@ section {
 @include keyframes(backToHome) {
   to {
     width: 18%;
-    height: 57%;
+    height: 51%;
   }
 }
 

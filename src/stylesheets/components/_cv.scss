@@ -7,7 +7,6 @@
   border-bottom: 12rem solid $color-shadow;
   border-left: 12rem solid $color-transparent;
   transition: 2s;
-  cursor: pointer;
   z-index: 10;
 
   span {
@@ -28,6 +27,20 @@
       @include rotate(-90);
       right: 0;
       bottom: -8rem;
+    }
+
+    &:nth-of-type(3) {
+      @include rotate(-90);
+      cursor: pointer;
+      right: -2rem;
+      bottom: -8rem;
+    }
+
+    &:nth-of-type(4) {
+      @include rotate(0);
+      cursor: pointer;
+      right: 3rem;
+      bottom: -14rem;
     }
   }
 
@@ -50,6 +63,26 @@
         bottom: -7rem;
       }
 
+      &:nth-of-type(3) {
+        @include rotate(-45);
+        right: 2rem;
+        bottom: -10rem;
+
+        &:hover {
+          color: $color-home;
+        }
+      }
+
+      &:nth-of-type(4) {
+        @include rotate(-45);
+        right: 4rem;
+        bottom: -12rem;
+
+        &:hover {
+          color: $color-home;
+        }
+
+      }
     }
   }
 }
