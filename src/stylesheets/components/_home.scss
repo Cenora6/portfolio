@@ -150,6 +150,10 @@
     @include transition(2s);
     @include opacity(1);
     filter: grayscale(50%);
+
+    @include phone {
+      background-position: bottom;
+    }
   }
 
   span {
@@ -159,7 +163,7 @@
 
     @include phone {
       @include font-size(1.5);
-      @include transform(rotate(90deg) translate(0, -2rem));
+      @include transform(rotate(90deg) translate(-4rem, -2rem));
     }
   }
 }

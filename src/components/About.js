@@ -3,6 +3,7 @@ import Contact from "./Contact";
 import CV from "./CV";
 import selfPhoto from "./../assets/photo.png";
 import border from "./../assets/border.png";
+import LanguageSelector from "../language/LanguageSelector";
 
 class About extends Component {
     state = {
@@ -45,6 +46,7 @@ class About extends Component {
         return (
             <>
                 <Contact/>
+                <LanguageSelector/>
                 <section className='about'>
                     <div className={`background ${clicked && "back--to--home1"}`}>
                         <div className={`about__title ${clicked ? "fade--out" : "fade--in"}`}>

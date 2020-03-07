@@ -1,0 +1,16 @@
+.language {
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  text-align: right;
+  margin: 1rem;
+
+  img {
+    width: 5%;
+    margin: 0 0.5rem;
+  }
+
+  input {
+    visibility: hidden;
+  }
+}

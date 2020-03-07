@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Contact from "./Contact";
 import { projects, projectsDetails } from "./../database/projects"
 import CV from "./CV";
+import LanguageSelector from "../language/LanguageSelector";
 
 class Projects extends Component {
     state = {
@@ -237,6 +238,7 @@ class Projects extends Component {
         return (
             <>
                 <Contact/>
+                <LanguageSelector/>
                 <section className={`projects background ${clicked && "back--to--home3"}`}>
                     <h2 className={`${clicked ? "fade--out" : "fade--in"}`}>Projects</h2>
                     <div className={`projects__images ${clicked ? "fade--out" : "fade--in"}`}>

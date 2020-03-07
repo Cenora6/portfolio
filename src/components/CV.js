@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import pdf from '../files/resume.pdf'
 
 class CV extends Component {
 
@@ -7,8 +8,8 @@ class CV extends Component {
             <div className='cv'>
                 <span>Ciriculum</span>
                 <span>Vitae</span>
-                <span>EN</span>
-                <span>PL</span>
+                <span><a href={pdf}>EN</a></span>
+                <span><a href={pdf}>PL</a></span>
             </div>
         )
     }

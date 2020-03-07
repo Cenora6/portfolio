@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import Contact from "./Contact";
 import CV from "./CV";
+import LanguageSelector from "../language/LanguageSelector";
 
 class Home extends Component {
     state = {
@@ -69,6 +70,7 @@ class Home extends Component {
         return (
             <>
                 <Contact/>
+                <LanguageSelector/>
                 <section className='header'>
                     <div className='header__background'>
                         <div className={`header__title ${(clicked1 || clicked2 || clicked3) ? "fade--out" : "fade--in"}`}>

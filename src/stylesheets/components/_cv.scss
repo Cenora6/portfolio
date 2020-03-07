@@ -36,6 +36,7 @@
       right: 0;
       bottom: -8rem;
       color: $color-shadow;
+      z-index: -1;
     }
 
     &:nth-of-type(4) {
@@ -44,6 +45,7 @@
       right: 3rem;
       bottom: -11rem;
       color: $color-shadow;
+      z-index: -1;
     }
   }
 

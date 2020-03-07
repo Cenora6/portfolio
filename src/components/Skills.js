@@ -15,6 +15,7 @@ import babel from "./../assets/icons/babel.png"
 import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
 import CV from "./CV";
+import LanguageSelector from "../language/LanguageSelector";
 
 class Skills extends Component {
     state = {
@@ -58,6 +59,7 @@ class Skills extends Component {
         return (
             <>
                 <Contact/>
+                <LanguageSelector/>
                 <section className={`skills background ${clicked && "back--to--home2"}`}>
                     <div className={`skills__section ${clicked ? "fade--out" : "fade--in"}`}>
                         <h2>Skills</h2>
