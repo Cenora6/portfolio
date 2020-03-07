@@ -14,6 +14,21 @@ class Projects extends Component {
         activeProject: "",
         showProjectDetails: false,
         details: false,
+        width: window.innerWidth,
+    };
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({
+            width: window.innerWidth
+        });
     };
 
     goBack = () => {
@@ -74,7 +89,13 @@ class Projects extends Component {
 
     showButtons = () => {
         const { projectsPerPage, currentPage, clicked, changePage } = this.state;
-        const projectsNumber = Math.ceil(projects.link.length / projectsPerPage);
+
+        let projectsNumber;
+        if(this.state.width < 768) {
+            projectsNumber = Math.ceil(projects.link.length / 4);
+        } else {
+            projectsNumber = Math.ceil(projects.link.length / projectsPerPage);
+        }
         const previousButtonStyle = {
             display: currentPage === 1 && "none",
         };
@@ -145,8 +166,16 @@ class Projects extends Component {
 
         const {currentPage, projectsPerPage, changePage} = this.state;
 
-        const indexLast = currentPage * projectsPerPage;
-        const indexFirst = indexLast - projectsPerPage;
+        let indexFirst;
+        let indexLast;
+        if(this.state.width < 768) {
+            indexLast = currentPage * 4;
+            indexFirst = indexLast - 4;
+        } else {
+            indexLast = currentPage * projectsPerPage;
+            indexFirst = indexLast - projectsPerPage;
+        }
+
         const visibleProjects = projects.link.slice(indexFirst, indexLast);
 
         return (

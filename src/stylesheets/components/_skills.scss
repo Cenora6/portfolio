@@ -27,6 +27,10 @@
         flex-wrap: wrap;
         justify-content: flex-start;
 
+        @include phone {
+          width: 60%;
+        }
+
         h5 {
           position: relative;
           font-family: $font-base;
@@ -60,6 +64,13 @@
 
         &__single {
           margin: 2rem 0;
+
+          @include phone {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
 

@@ -8,12 +8,27 @@ class About extends Component {
     state = {
         back: false,
         clicked: false,
+        width: window.innerWidth,
+    };
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({
+            width: window.innerWidth
+        });
     };
 
     goBack = () => {
-      this.setState({
-          back: !this.state.back,
-      })
+        this.setState({
+            back: !this.state.back,
+        })
     };
 
     goHome = () => {
@@ -26,7 +41,7 @@ class About extends Component {
     };
 
     render() {
-        const { back, clicked } = this.state;
+        const { back, clicked, width } = this.state;
         return (
             <>
                 <Contact/>
@@ -35,11 +50,29 @@ class About extends Component {
                         <div className={`about__title ${clicked ? "fade--out" : "fade--in"}`}>
                             <div className='about__title__name'>
                                 <h1>Hello!</h1>
-                                <h2>I'm Aleksandra Gasidlo</h2>
-                                <p>
-                                    A<span className='decorative'> frontend developer </span>and
-                                    <span className='decorative'> medical laboratory scientist </span>
-                                </p>
+                                {width < 768 ?
+                                    <>
+                                        <h2>I'm Aleksandra</h2>
+                                        <h2>Gasidlo</h2>
+                                    </>
+                                    :
+                                    <h2>I'm Aleksandra Gasidlo</h2>
+                                }
+                                {width < 768 ?
+                                    <>
+                                        <p>
+                                            A<span className='decorative'> frontend developer </span> and
+                                        </p>
+                                        <p>
+                                            <span className='decorative'> medical laboratory scientist </span>
+                                        </p>
+                                    </>
+                                    :
+                                    <p>
+                                        A<span className='decorative'> frontend developer </span>and
+                                        <span className='decorative'> medical laboratory scientist </span>
+                                    </p>
+                                }
                             </div>
                             <div className='about__title__image'>
                                 <span className='about__title__image__shape first'></span>
@@ -52,9 +85,8 @@ class About extends Component {
                         <div className={`about__description ${clicked ? "fade--out" : "fade--in"}`}>
                             <p>
                                 I've started<span className='decorative'> programming </span>recently and discovered
-                                it's something I want to do for the rest of the life. Previously I was working as a
-                                <span className='decorative' >medical laboratory scientist </span>in a laboratory at the
-                                hospital.
+                                it's something I want to do. Previously I was working as a <span className='decorative'>
+                                medical laboratory scientist </span>in a laboratory at the hospital.
                             </p>
                             <p>
                                 Couple years ago my interest in <span className='decorative'> Korean culture </span>started

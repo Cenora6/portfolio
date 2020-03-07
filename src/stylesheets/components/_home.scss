@@ -14,6 +14,10 @@
     width: 57%;
     height: 86%;
     z-index: 10;
+
+    @include phone {
+      width: 75%;
+    }
   }
 
   &__title {
@@ -75,8 +79,8 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: $color-base url("./../../assets/pattern.png") no-repeat;
           background-size: cover;
+          background: url("./../../assets/pattern.png") no-repeat;
           @include opacity(.3);
           filter: grayscale(100%);
           border: 0.1rem double $color-base;
@@ -122,6 +126,10 @@
     @include transition(2s);
     @include opacity(.4);
     filter: grayscale(100%);
+
+    @include phone {
+      background-position: bottom;
+    }
   }
 
   span {
@@ -148,6 +156,11 @@
     @include font-size(2);
     @include transform(rotate(90deg) translate(0, -8rem));
     @include transition(2s ease-in-out);
+
+    @include phone {
+      @include font-size(1.5);
+      @include transform(rotate(90deg) translate(0, -2rem));
+    }
   }
 }
 

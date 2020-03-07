@@ -8,6 +8,7 @@
   border-left: 12rem solid $color-transparent;
   transition: 2s;
   z-index: 10;
+  display: flex;
 
   span {
     position: absolute;
@@ -32,15 +33,17 @@
     &:nth-of-type(3) {
       @include rotate(-90);
       cursor: pointer;
-      right: -2rem;
+      right: 0;
       bottom: -8rem;
+      color: $color-shadow;
     }
 
     &:nth-of-type(4) {
       @include rotate(0);
       cursor: pointer;
       right: 3rem;
-      bottom: -14rem;
+      bottom: -11rem;
+      color: $color-shadow;
     }
   }
 
@@ -50,6 +53,7 @@
 
     span {
       @include font-size (1.2);
+      color: $color-base;
 
       &:first-of-type {
         @include rotate(-45);

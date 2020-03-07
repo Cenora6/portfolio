@@ -14,6 +14,14 @@
     position: relative;
     margin: 1rem 0;
 
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 60%;
+    }
+
     &--show {
       @include animation(slide-from-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both);
     }
@@ -34,6 +42,10 @@
       border: 0.5rem double $color-base;
       position: relative;
       bottom: 10rem;
+
+      @include phone {
+        width: auto;
+      }
 
       &:first-of-type, &:nth-of-type(2), &:nth-of-type(3) {
         animation-delay: 0s;
@@ -58,11 +70,19 @@
       position: relative;
       bottom: 10rem;
 
+      @include phone {
+        flex-direction: column;
+      }
+
       &__photos {
         display: flex;
         justify-content: space-between;
         align-content: center;
         width: 50%;
+
+        @include phone {
+          width: 100%;
+        }
 
         img:only-child {
           margin: 0 auto;
@@ -79,7 +99,12 @@
             left: 2rem;
             bottom: 2rem;
             height: 20rem;
-            z-index: -1;
+            z-index: 0;
+
+            @include phone {
+              bottom: auto;
+              height: 60%;
+            }
           }
         }
 
@@ -100,6 +125,10 @@
           right: 0;
           z-index: -1;
           @include opacity(.3);
+
+          @include phone {
+            width: 100%;
+          }
         }
 
         img {
@@ -128,6 +157,11 @@
       padding: 1rem;
       bottom: 10rem;
 
+      @include phone {
+        height: 30%;
+        padding: 0.5rem;
+      }
+
       &:after {
         content: "";
         left: 0;
@@ -143,12 +177,22 @@
       p {
         margin: 1rem;
         height: 50%;
+
+        @include phone {
+          height: auto;
+          margin: 1rem;
+        }
       }
 
       &__links {
         height: 10%;
         display: flex;
         justify-content: flex-end;
+
+        @include phone {
+          position: absolute;
+          bottom: 1rem;
+        }
 
         a {
           color: $color-shadow;
