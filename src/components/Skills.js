@@ -16,6 +16,7 @@ import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
 import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
+import {Text} from "./../language/LanguageProvider"
 
 class Skills extends Component {
     state = {
@@ -62,7 +63,7 @@ class Skills extends Component {
                 <LanguageSelector/>
                 <section className={`skills background ${clicked && "back--to--home2"}`}>
                     <div className={`skills__section ${clicked ? "fade--out" : "fade--in"}`}>
-                        <h2>Skills</h2>
+                        <h2><Text tid="skills1"/></h2>
                         <div className='skills__section__images'>
                             <div className='skills__section__images__tools'>
                                 <h5>Front End</h5>
@@ -103,7 +104,7 @@ class Skills extends Component {
                                         <span className="tooltiptext" style={{opacity: `${tooltipTitle === "firebase" ? "0.5" : "0"}`}}>Firebase</span>
                                     </div>
                                 </article>
-                                <h5>Tools/other</h5>
+                                <h5><Text tid="skills2"/></h5>
                                 <article className='skills__section__images__tools__single'>
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='git'>
                                         <img src={git} alt='git'/>

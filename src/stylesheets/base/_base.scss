@@ -29,6 +29,10 @@ article, aside, figcaption, figure, footer, header, nav, section {
 }
 h1, h2, h3, h4 {
   text-shadow: 2px 2px 0 $color-shadow, 4px 4px 0 $color-shadow-dark;
+
+  @include phone {
+    text-shadow: 1px 1px 0 $color-shadow, 2px 2px 0 $color-shadow-dark;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -72,6 +76,7 @@ p {
   color: $color-shadow;
 
   .decorative {
+    margin: 0 0.3rem;
     &:nth-of-type(even) {
       color: $color-linkedin;
     }

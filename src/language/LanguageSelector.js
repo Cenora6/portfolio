@@ -1,35 +1,25 @@
 import React, {useContext} from 'react';
 import {languageOptions} from './languages';
 import {LanguageContext} from './LanguageProvider';
-import en from "./../assets/languages/english.png"
-import pl from "./../assets/languages/polish.png"
 
 export default function LanguageSelector() {
     const languageContext = useContext(LanguageContext);
 
-    const handleLanguageChange = (value) => {
-        const selectedLanguage = languageOptions.find(item => item.value === value);
+    const handleLanguageChange = (e) => {
+        const selectedLanguage = languageOptions.find(item => item.id === e.target.value);
         languageContext.setLanguage(selectedLanguage);
     };
 
     return (
         <div className='language'>
-            <label>
-                <input type="radio" name="language" value="pl" onChange={handleLanguageChange} checked/>
-                <img src={pl} alt='polish'/>
-            </label>
+            {languageOptions.map(item => (
+                <label key={item.id}>
+                    <input type="radio" name="language" key={item.id} value={item.id} onChange={handleLanguageChange}
+                    checked={languageContext.language.id === item.id}/>
+                    <img src={item.photo} alt='language'/>
+                </label>
 
-            <label>
-                <input type="radio" name="language" value="en" onChange={handleLanguageChange}/>
-                <img src={en} alt='english'/>
-            </label>
+            ))}
         </div>
-
-        //
-        //
-        //     value={languageContext.language.id}
-        //     options={languageOptions}
-        //     searchable={false}
-        // />
     );
 };

@@ -6,11 +6,18 @@
   margin: 1rem;
 
   img {
-    width: 5%;
+    width: 4%;
     margin: 0 0.5rem;
+    cursor: pointer;
+    filter: grayscale(100%);
+    @include transition(1s);
   }
 
   input {
     visibility: hidden;
+
+    &:checked + img  {
+      filter: grayscale(0%);
+    }
   }
 }

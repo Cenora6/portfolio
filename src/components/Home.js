@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Contact from "./Contact";
 import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
+import {Text} from "./../language/LanguageProvider"
 
 class Home extends Component {
     state = {
@@ -74,9 +75,9 @@ class Home extends Component {
                 <section className='header'>
                     <div className='header__background'>
                         <div className={`header__title ${(clicked1 || clicked2 || clicked3) ? "fade--out" : "fade--in"}`}>
-                            <h1>Aleksandra Gasidlo</h1>
+                            <h1>Aleksandra Gasidło</h1>
                             <p>
-                                <i className="fas fa-vial"></i> Medical Laboratory Scientist.
+                                <i className="fas fa-vial"></i> <Text tid="home1"/>.
                             </p>
                             <p>
                                 <i className="fas fa-code"></i> Front-end Developer.
@@ -86,15 +87,15 @@ class Home extends Component {
                             <ul className='header__links__list'>
                                 <li className={`header__links__list__single first__box ${link === "about" && hoverSection ? "hover" : "hidden"}`}
                                     id='about' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToAboutMe}>
-                                    <span>About Me</span>
+                                    <span><Text tid="home2"/></span>
                                 </li>
                                 <li className={`header__links__list__single second__box ${link === "skills" && hoverSection ? "hover" : "hidden"}`}
                                     id='skills' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToSkills}>
-                                    <span>My Skills</span>
+                                    <span><Text tid="home3"/></span>
                                 </li>
                                 <li className={`header__links__list__single ${link === "projects" && hoverSection ? "hover" : "hidden"}`}
                                     id='projects' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.goToProjects}>
-                                    <span>My Projects</span>
+                                    <span><Text tid="home4"/></span>
                                 </li>
                             </ul>
                         </div>

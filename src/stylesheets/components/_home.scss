@@ -38,11 +38,12 @@
       animation: type 4s steps(60, end);
       white-space: nowrap;
       overflow: hidden;
-      width: 30rem;
+      padding-bottom: 0.5rem;
     }
 
     i {
       color: $color-base;
+      //@include font-size(2);
     }
   }
 
@@ -203,5 +204,8 @@
 @include keyframes (type) {
   from {
     width: 0;
+  }
+  to {
+    width: 100%;
   }
 }

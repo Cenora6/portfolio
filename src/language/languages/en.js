@@ -1,6 +1,40 @@
 const en = {
-    headerTitle1: "Do you have things at home you don't use anymore?",
+    home1: "Medical Laboratory Scientist",
+    home2: "About Me",
+    home3: "My Skills",
+    home4: "My Projects",
 
+    about1: "Hello!",
+    about3: "A Front-end developer",
+    about4: "and",
+    about5: "medical laboratory scientist",
+    about6: "I've started",
+    about7: "programming",
+    about8: "recently and discovered it's something I want to do. Previously I was working as a",
+    about9: "in a laboratory at the hospital.",
+    about10: "Couple years ago my interest in",
+    about11: "Korean culture",
+    about12: "started and that's how I ended up",
+    about13: "learning Korean language",
+    about14: "by my own (I'm aiming to speak Korean fluently) and traveling to",
+    about15: "South Korea.",
+    about16: "In the free time I love playing",
+    about17: "computer games",
+    about18: "visiting new countries (especially their zoos)",
+    about19: "since I love animals. This is why I love keeping an eye on my lovely pet -",
+    about20: "a snake named Freya.",
+    about21: "I can't live without the",
+    about22: "music.",
+
+    skills1: "Skills",
+    skills2: "Tools/other",
+
+    projects1: "Projects",
+    projects2: "back",
+    projects3: "Used",
+    projects4: "Language",
+    projects5: "Code",
+    projects6: "Live",
 };
 
 export default en;

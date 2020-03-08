@@ -4,6 +4,7 @@ import CV from "./CV";
 import selfPhoto from "./../assets/photo.png";
 import border from "./../assets/border.png";
 import LanguageSelector from "../language/LanguageSelector";
+import {Text} from "./../language/LanguageProvider"
 
 class About extends Component {
     state = {
@@ -51,28 +52,23 @@ class About extends Component {
                     <div className={`background ${clicked && "back--to--home1"}`}>
                         <div className={`about__title ${clicked ? "fade--out" : "fade--in"}`}>
                             <div className='about__title__name'>
-                                <h1>Hello!</h1>
-                                {width < 768 ?
-                                    <>
-                                        <h2>I'm Aleksandra</h2>
-                                        <h2>Gasidlo</h2>
-                                    </>
-                                    :
-                                    <h2>I'm Aleksandra Gasidlo</h2>
-                                }
+                                <h1><Text tid="about1"/></h1>
+                                <h2>Aleksandra Gasidło</h2>
                                 {width < 768 ?
                                     <>
                                         <p>
-                                            A<span className='decorative'> frontend developer </span> and
+                                            <span className='decorative'> <Text tid="about3"/> </span>
+                                            <Text tid="about4"/>
                                         </p>
                                         <p>
-                                            <span className='decorative'> medical laboratory scientist </span>
+                                            <span className='decorative'> <Text tid="about5"/> </span>
                                         </p>
                                     </>
                                     :
                                     <p>
-                                        A<span className='decorative'> frontend developer </span>and
-                                        <span className='decorative'> medical laboratory scientist </span>
+                                        <span className='decorative'> <Text tid="about3"/> </span>
+                                        <Text tid="about4"/>
+                                        <span className='decorative'> <Text tid="about5"/> </span>
                                     </p>
                                 }
                             </div>
@@ -86,22 +82,29 @@ class About extends Component {
                         </div>
                         <div className={`about__description ${clicked ? "fade--out" : "fade--in"}`}>
                             <p>
-                                I've started<span className='decorative'> programming </span>recently and discovered
-                                it's something I want to do. Previously I was working as a <span className='decorative'>
-                                medical laboratory scientist </span>in a laboratory at the hospital.
+                                <Text tid="about6"/>
+                                <span className='decorative'> <Text tid="about7"/> </span>
+                                <Text tid="about8"/>
+                                <span className='decorative'> <Text tid="about5"/> </span>
+                                <Text tid="about9"/>
                             </p>
                             <p>
-                                Couple years ago my interest in <span className='decorative'> Korean culture </span>started
-                                and that's how I ended up <span className='decorative'> learning Korean language </span>
-                                by my own (I'm aiming to speak Korean fluently) and traveling to
-                                <span className='decorative'> South Korea</span>.
+                                <Text tid="about10"/>
+                                <span className='decorative'> <Text tid="about11"/></span>
+                                <Text tid="about12"/>
+                                <span className='decorative'> <Text tid="about13"/> </span>
+                                <Text tid="about14"/>
+                                <span className='decorative'> <Text tid="about15"/></span>
                             </p>
                             <p>
-                                In the free time I love playing <span className='decorative'> computer games </span> and
-                                <span className='decorative'> visiting new countries (especially their zoos) </span>
-                                since I love animals. This is why I love keeping an eye on my lovely pet - a
-                                <span className='decorative'> snake named Freya </span>. I can't live without the
-                                <span className='decorative'> music </span>.
+                                <Text tid="about16"/>
+                                <span className='decorative'> <Text tid="about17"/> </span>
+                                <Text tid="about4"/>
+                                <span className='decorative'> <Text tid="about18"/> </span>
+                                <Text tid="about19"/>
+                                <span className='decorative'> <Text tid="about20"/> </span>
+                                <Text tid="about21"/>
+                                <span className='decorative'> <Text tid="about22"/> </span>
                             </p>
                         </div>
                     </div>

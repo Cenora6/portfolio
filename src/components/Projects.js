@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
-import { projects, projectsDetails } from "./../database/projects"
+import { projects, projectsDetails_pl, projectsDetails_en } from "./../database/projects"
 import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
+import {LanguageContext, Text} from "./../language/LanguageProvider"
 
 class Projects extends Component {
     state = {
@@ -17,6 +18,8 @@ class Projects extends Component {
         details: false,
         width: window.innerWidth,
     };
+
+    static contextType = LanguageContext;
 
     componentDidMount() {
         window.addEventListener('resize', this.handleWindowSizeChange);
@@ -134,7 +137,7 @@ class Projects extends Component {
                 <span className='projects__buttons__small'></span>
                 <span className='projects__buttons__big'></span>
                 <button className={`back projects__buttons--active`}
-                        onClick={this.backToProjects}>back</button>
+                        onClick={this.backToProjects}><Text tid='projects2'/></button>
                 <span className='projects__buttons__big'></span>
                 <span className='projects__buttons__small'></span>
             </div>
@@ -195,7 +198,15 @@ class Projects extends Component {
 
     projectDetails = () => {
         const { activeProject, details } = this.state;
-        const project = projectsDetails[activeProject];
+
+        let project;
+        const language = this.context.language.id;
+        if(language === "pl") {
+            project = projectsDetails_pl[activeProject]
+        } else {
+            project = projectsDetails_en[activeProject]
+        }
+
         return (
             <>
                 <div className={`projects__images__details ${details ? "projects__images--show" : "projects__images--hide"}`}>
@@ -206,11 +217,11 @@ class Projects extends Component {
                     <div className='projects__images__details__text'>
                         <p>
                             <i className="fas fa-check"></i>
-                            <span className='decorative'> Used: </span> {project.details}
+                            <span className='decorative'> <Text tid='projects3'/>: </span> {project.details}
                         </p>
                         <p>
                             <i className="fas fa-check"></i>
-                            <span className='decorative'> Language: </span>
+                            <span className='decorative'> <Text tid='projects4'/>: </span>
                             {project.language.map( (language, index) =>
                                 <img key={index} src={language} alt='project__language'/>)}
                         </p>
@@ -219,8 +230,8 @@ class Projects extends Component {
                 <div className={`projects__images__description ${details ? "projects__images--show" : "projects__images--hide"}`}>
                     <p>{project.description}</p>
                     <div className='projects__images__description__links'>
-                        <button><a href={project.code}>Code</a></button>
-                        <button><a href={project.live}>Live</a></button>
+                        <button><a href={project.code}><Text tid='projects5'/></a></button>
+                        <button><a href={project.live}><Text tid='projects6'/></a></button>
                     </div>
                 </div>
             </>
@@ -240,7 +251,7 @@ class Projects extends Component {
                 <Contact/>
                 <LanguageSelector/>
                 <section className={`projects background ${clicked && "back--to--home3"}`}>
-                    <h2 className={`${clicked ? "fade--out" : "fade--in"}`}>Projects</h2>
+                    <h2 className={`${clicked ? "fade--out" : "fade--in"}`}><Text tid='projects1'/></h2>
                     <div className={`projects__images ${clicked ? "fade--out" : "fade--in"}`}>
                         {projectsList}
                     </div>

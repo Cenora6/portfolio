@@ -1,5 +1,7 @@
 import pl from './pl';
 import en from './en';
+import english from "./../../assets/languages/english.png"
+import polish from "./../../assets/languages/polish.png"
 
 export const dictionaryList = {
     pl,
@@ -7,6 +9,6 @@ export const dictionaryList = {
 };
 
 export const languageOptions = [
-    { key: 'pl', id: 'pl', label: '🇵🇱', class: "pl", value: 'pl', },
-    { key: 'en', id: 'en', label: '🇬🇧', class: "en", value: 'en' },
+    { id: 'pl', value: 'pl', photo: polish },
+    { id: 'en', value: 'en', photo: english },
 ];

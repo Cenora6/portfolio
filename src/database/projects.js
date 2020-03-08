@@ -51,7 +51,7 @@ const projects = {
     ],
 };
 
-const projectsDetails = [
+const projectsDetails_en = [
     {
         image: [mobile1],
         details: "HTML5, Sass, React, firebase",
@@ -158,4 +158,111 @@ const projectsDetails = [
     },
 ];
 
-export { projects, projectsDetails };
+const projectsDetails_pl = [
+    {
+        image: [mobile1],
+        details: "HTML5, Sass, React, firebase",
+        language: [english],
+        description: "Aplikacja, w której można znaleźć porady dotyczące jazdy pojazdami czy ruchu drogowego. Każda porada zawiera test - za każdą poprawną odpowiedź użytkownik dostaje punkt. Użytkownicy mogą dodać pytania dotyczące każdej z porad, a także edytować własny profil dodając zdjęcie czy opis. Aplikacja zaprojektowana jest dla użytkowników telefonów.",
+        code: "https://github.com/Cenora6/DRV-Driving-Experience",
+        live: "https://cenora6.github.io/DRV-Driving-Experience/#/"
+    },
+
+    {
+        image: [mobile2, desktop2],
+        details: "HTML5, CSS, jQuery, webpack",
+        language: [english],
+        description: "To Do List, czyli lista, gdzie można zapisać własne zadania do wykonania, usunąć je czy oznaczyć jako 'zakończone'. Lista posiada pasek postępu, na którym można sprawdzić procent zakończonych zadań.",
+        code: "https://github.com/Cenora6/To-Do-List",
+        live: "https://cenora6.github.io/To-Do-List/"
+    },
+
+    {
+        image: [mobile3, desktop3],
+        details: "HTML5, CSS, jQuery, Webpack",
+        language: [english],
+        description: "'Order Your Pizza' jest przykładową stroną, na której można zamówić pizzę. Każdy krok pozwala nam wybrać rozmiar, typ ciasta, rodzaj pizzy oraz dodatkowe składniki. Na samym końcu znajduje się kalkulator, który podlicza cenę wybranych pizz. Każdy wybór jest przechowywany w sessionStorage.",
+        code: "https://github.com/Cenora6/Order-Your-Pizza",
+        live: "https://cenora6.github.io/Order-Your-Pizza/"
+    },
+
+    {
+        image: [desktop4],
+        details: "HTML5, SASS, React, Webpack",
+        language: [english],
+        description: "Przykładowa aplikacja dla schronisk, dzięki której można znaleźć kota na podstawie imienia, płci bądź tego, czy kot lubi dzieci, czy nie.",
+        code: "https://github.com/Cenora6/Cat_Shelter_App",
+        live: "https://cenora6.github.io/Cat_Shelter_App/"
+    },
+
+    {
+        image: [mobile5, desktop5],
+        details: "HTML5, CSS, SASS, React, Firebase",
+        language: [english, polish],
+        description: "Przykładowa aplikacja/strona, na której można oddać stare książki, gdy czy ubraia potrzebującym. Po zarejestrowaniu, każdy użytkownik może sprawdzić swoje statystyki (ilość litrów oddanych worków czy zorganizowane zbiórki) lub wypełnić nowy formularz dotyczący zbiórki (wybierając rzeczy do oddania, ilość litrów worków, organizacje, której chcemy przekazać rzeczy lub miasto oraz podać adres do odbioru rzeczy przez kuriera. Strona dostępna w języku polskim i angielskim.",
+        code: "https://github.com/Cenora6/Start-Helping-App",
+        live: "https://cenora6.github.io/Start-Helping-App/#/"
+    },
+    {
+        image: [mobile6, desktop6],
+        details: "HTML5, CSS, jQuery, AJAX",
+        language: [english],
+        description: "Aplikacja używana do wyszukania zdjęć znajdujących się w bibliotece obrazów NASA. Po kliknięciu na wybrane zdjęcia, pojawiają się one w oryginalnych rozmiarach.",
+        code: "https://github.com/Cenora6/NASA-API-Challenge",
+        live: "https://cenora6.github.io/NASA-API-Challenge/"
+    },
+    {
+        image: [mobile7, desktop7],
+        details: "HTML5, SCSS, Vanilla JavaScript",
+        language: [english],
+        description: "Przykkładowa strona sklepu, zaprojektorana zarówno dla użytkowników telefonów, jak i komputerów. Strona zawiera również kalkulator, dzięki któremu można obliczyć cenę usług.",
+        code: "https://github.com/Cenora6/BestShop_WS_first_RWD",
+        live: "https://cenora6.github.io/BestShop_WS_first_RWD/"
+    },
+
+    {
+        image: [desktop8],
+        details: "HTML5, CSS, SASS, React, Webpack, Firebase",
+        language: [polish],
+        description: "Projekt 'Your Travel Destination' (Twój cel podróży) pozwoli Ci na bazie twoich preferencji za pomocą quizu wybrać najbardziej pasujące miejsce na podróż. Możesz tutaj również przeglądać historię wyników quizu, oznaczać miejsca jako 'Zwiedzone', a także dodać własne miejsca.",
+        code: "https://github.com/Cenora6/Your_Travel_Destination_-QUIZ-",
+        live: "https://cenora6.github.io/Your_Travel_Destination_-QUIZ-/#/"
+    },
+
+    {
+        image: [desktop9],
+        details: "HTML5, CSS, Vanilla JavaScript",
+        language: [english],
+        description: "Pomóż kotkowi zjeść wszystkie babeczki. Prosta gra, gdzie zbierasz babeczki używając strzałek.",
+        code: "https://github.com/Cenora6/Furry-Game",
+        live: "https://cenora6.github.io/Furry-Game/"
+    },
+    {
+        image: [desktop10],
+        details: "HTML5, SCSS, React",
+        language: [english],
+        description: "Strona portfolio.",
+        code: "https://github.com/Cenora6/DRV-Driving-Experience",
+        live: "https://cenora6.github.io/DRV-Driving-Experience/#/"
+    },
+
+    {
+        image: [mobile11, desktop11],
+        details: "HTML5, CSS, jQuery",
+        language: [english],
+        description: "Pasek postępu, którego kolor i procent wypełnienia kolorem zmienia się na podstawie wybranego przycisku. Możliwa jest również zmiana trybu nocnego lub trybu dziennego strony.",
+        code: "https://github.com/Cenora6/Progress-Bar",
+        live: "https://cenora6.github.io/Progress-Bar/"
+    },
+
+    {
+        image: [desktop12],
+        details: "HTML5, CSS, Vanilla JavaScript",
+        language: [english],
+        description: "Przykładowa strona stworzona przy wykorzystaniu podstawowych technologii.",
+        code: "https://github.com/Cenora6/BestShop_WS_first",
+        live: "https://cenora6.github.io/BestShop_WS_first/"
+    },
+];
+
+export { projects, projectsDetails_pl, projectsDetails_en };
