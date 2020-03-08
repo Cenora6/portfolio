@@ -27,7 +27,7 @@ const pl = {
     about21: "dzięki niej mogę się uśmiechać każdego dnia : )",
     about22: "",
 
-    skills1: "Umiejetności",
+    skills1: "Umiejętności",
     skills2: "Narzędzia/inne",
 
     projects1: "Projekty",

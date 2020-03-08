@@ -199,7 +199,7 @@ const projectsDetails_pl = [
         image: [mobile5, desktop5],
         details: "HTML5, CSS, SASS, React, Firebase",
         language: [english, polish],
-        description: "Przykładowa aplikacja/strona, na której można oddać stare książki, gdy czy ubraia potrzebującym. Po zarejestrowaniu, każdy użytkownik może sprawdzić swoje statystyki (ilość litrów oddanych worków czy zorganizowane zbiórki) lub wypełnić nowy formularz dotyczący zbiórki (wybierając rzeczy do oddania, ilość litrów worków, organizacje, której chcemy przekazać rzeczy lub miasto oraz podać adres do odbioru rzeczy przez kuriera. Strona dostępna w języku polskim i angielskim.",
+        description: "Przykładowa aplikacja/strona, na której można oddać stare książki, gdy czy ubraia potrzebującym. Po zarejestrowaniu, każdy użytkownik może sprawdzić swoje statystyki lub wypełnić nowy formularz dotyczący zbiórki. Strona dostępna w języku polskim i angielskim.",
         code: "https://github.com/Cenora6/Start-Helping-App",
         live: "https://cenora6.github.io/Start-Helping-App/#/"
     },

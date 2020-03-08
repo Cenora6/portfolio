@@ -21,7 +21,7 @@ class Contact extends Component {
                             <i className="far fa-address-book"></i>
                         </span>
                         <span className="contact__circles__single linkedin">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aleksandra-gasid%C5%82o-8b0338190/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aleksandra-gasidlo/">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                         </span>
