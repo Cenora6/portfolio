@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import Contact from "./Contact";
-import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
 import {Text} from "./../language/LanguageProvider"
 

@@ -14,6 +14,8 @@ import ubuntu from "./../assets/icons/ubuntu.png"
 import babel from "./../assets/icons/babel.png"
 import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
+import trello from "./../assets/icons/trello.png"
+import slack from "./../assets/icons/slack.png"
 import LanguageSelector from "../language/LanguageSelector";
 import {Text} from "./../language/LanguageProvider"
 
@@ -126,8 +128,16 @@ class Skills extends Component {
                                         <span className="tooltiptext" style={{opacity: `${tooltipTitle === "babel" ? "0.5" : "0"}`}}>Babel</span>
                                     </div>
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='npm'>
-                                        <img src={npm} alt='npm' style={{height: "3rem"}}/>
-                                        <span className="tooltiptext" style={{opacity: `${tooltipTitle === "npm" ? "0.5" : "0"}`}}>Npm</span>
+                                        <img src={npm} alt='npm'/>
+                                        <span className="tooltiptext" style={{opacity: `${tooltipTitle === "npm" ? "0.5" : "0"}`}}>npm</span>
+                                    </div>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='trello'>
+                                        <img src={trello} alt='trello'/>
+                                        <span className="tooltiptext" style={{opacity: `${tooltipTitle === "trello" ? "0.5" : "0"}`}}>Trello</span>
+                                    </div>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='slack'>
+                                        <img src={slack} alt='slack'/>
+                                        <span className="tooltiptext" style={{opacity: `${tooltipTitle === "slack" ? "0.5" : "0"}`}}>Slack</span>
                                     </div>
                                 </article>
                             </div>
