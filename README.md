@@ -13,7 +13,7 @@ A personal portfolio page.
 ### Additional dependencies: 
 - [Node Sass](https://www.npmjs.com/package/node-sass/)
 - [React Router Dom](https://www.npmjs.com/package/react-router-dom/)
-- [CSS_reset_and_normalize](https://www.npmjs.com/package/css-reset-and-normalize)
+- [CSS reset and normalize](https://www.npmjs.com/package/css-reset-and-normalize)
 
 ### Installation:
 
