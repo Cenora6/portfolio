@@ -1,3 +1,5 @@
+![](src/assets/preview/preview.png)
+
 # Portfolio
 
 ### Description
