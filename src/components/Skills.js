@@ -14,7 +14,6 @@ import ubuntu from "./../assets/icons/ubuntu.png"
 import babel from "./../assets/icons/babel.png"
 import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
-import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
 import {Text} from "./../language/LanguageProvider"
 
@@ -139,7 +138,6 @@ class Skills extends Component {
                         <span className={`${back ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
-                <CV/>
             </>
         )
     }

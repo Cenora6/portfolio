@@ -104,7 +104,6 @@ class Home extends Component {
                         <div className={`transition3 ${clicked3 && "show"}`}></div>
                     </div>
                 </section>
-                <CV/>
             </>
         );
     }

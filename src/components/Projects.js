@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
 import { projects, projectsDetails_pl, projectsDetails_en } from "./../database/projects"
-import CV from "./CV";
 import LanguageSelector from "../language/LanguageSelector";
 import {LanguageContext, Text} from "./../language/LanguageProvider"
 
@@ -261,7 +260,6 @@ class Projects extends Component {
                         <span className={`${hoverBackButton ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
-                <CV/>
             </>
         )
     }

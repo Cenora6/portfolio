@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Contact from "./Contact";
-import CV from "./CV";
 import selfPhoto from "./../assets/photo.png";
 import border from "./../assets/border.png";
 import LanguageSelector from "../language/LanguageSelector";
@@ -113,7 +112,6 @@ class About extends Component {
                         <span className={`${back ? "back"  : "stay"}`}></span>
                     </div>
                 </section>
-                <CV/>
             </>
         )
     }
