@@ -29,6 +29,7 @@ const pl = {
 
     skills1: "Umiejętności",
     skills2: "Narzędzia/inne",
+    skills3: "Uczę się",
 
     projects1: "Projekty",
     projects2: "wróć",

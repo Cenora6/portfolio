@@ -258,3 +258,16 @@ section {
     @include transition(opacity 1s ease-in-out);
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  margin: 0 1rem;
+
+  &-track {
+    background: $color-base;
+  }
+
+  &-thumb {
+    background: $color-box;
+  }
+}

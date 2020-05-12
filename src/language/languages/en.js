@@ -28,6 +28,7 @@ const en = {
 
     skills1: "Skills",
     skills2: "Tools/other",
+    skills3: "Learning",
 
     projects1: "Projects",
     projects2: "back",

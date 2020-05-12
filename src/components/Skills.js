@@ -16,6 +16,7 @@ import npm from "./../assets/icons/npm.png"
 import firebase from "./../assets/icons/firebase.png"
 import trello from "./../assets/icons/trello.png"
 import slack from "./../assets/icons/slack.png"
+import typescript from "./../assets/icons/typescript.png"
 import LanguageSelector from "../language/LanguageSelector";
 import {Text} from "./../language/LanguageProvider"
 
@@ -138,6 +139,13 @@ class Skills extends Component {
                                     <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='slack'>
                                         <img src={slack} alt='slack'/>
                                         <span className="tooltiptext" style={{opacity: `${tooltipTitle === "slack" ? "0.5" : "0"}`}}>Slack</span>
+                                    </div>
+                                </article>
+                                <h5><Text tid="skills3"/></h5>
+                                <article className='skills__section__images__tools__single'>
+                                    <div className="tooltip" onMouseLeave={this.hideToolTip} onMouseEnter={this.showTooltip} id='typescript'>
+                                        <img src={typescript} alt='typescript'/>
+                                        <span className="tooltiptext" style={{opacity: `${tooltipTitle === "typescript" ? "0.5" : "0"}`}}>TypeScript</span>
                                     </div>
                                 </article>
                             </div>
