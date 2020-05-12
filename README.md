@@ -22,4 +22,4 @@ A personal portfolio page.
 - ```npm start``` and ```http://localhost:3000/``` in the browser to preview the app :)
 
 ### Preview
-To preview the portfolio, go to ⇒ https://www.ag-portfolio.pl
+To preview the portfolio, go to ⇒ https://www.aleksandra-gasidlo.com/
