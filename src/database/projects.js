@@ -10,6 +10,7 @@ import project9 from "./../assets/projects/project9.png";
 import project10 from "./../assets/projects/project10.png";
 import project11 from "./../assets/projects/project11.png";
 import project12 from "./../assets/projects/project12.png";
+import project13 from "./../assets/projects/project13.png";
 
 import desktop2 from "./../assets/projects/desktop2.png";
 import desktop3 from "./../assets/projects/desktop3.png";
@@ -22,6 +23,7 @@ import desktop9 from "./../assets/projects/desktop9.png";
 import desktop10 from "./../assets/projects/desktop10.png";
 import desktop11 from "./../assets/projects/desktop11.png";
 import desktop12 from "./../assets/projects/desktop12.png";
+import desktop13 from "./../assets/projects/desktop13.png";
 
 import mobile1 from "./../assets/projects/mobile1.png";
 import mobile2 from "./../assets/projects/mobile2.png";
@@ -30,6 +32,7 @@ import mobile5 from "./../assets/projects/mobile5.png";
 import mobile6 from "./../assets/projects/mobile6.png";
 import mobile7 from "./../assets/projects/mobile7.png";
 import mobile11 from "./../assets/projects/mobile11.png";
+import mobile13 from "./../assets/projects/mobile13.png";
 
 import polish from "./../assets/languages/polish.png";
 import english from "./../assets/languages/english.png";
@@ -47,7 +50,8 @@ const projects = {
         project9,
         project10,
         project11,
-        project12
+        project12,
+        project13
     ],
 };
 
@@ -156,6 +160,15 @@ const projectsDetails_en = [
         code: "https://github.com/Cenora6/BestShop_WS_first",
         live: "https://cenora6.github.io/BestShop_WS_first/"
     },
+
+    {
+        image: [mobile13, desktop13],
+        details: "HTML5, SASS, React (Hooks)",
+        language: [english],
+        description: "A video game database, where you can find informations about all the games. This website is using IGDB database. You can also listen to a retro music while searching for the games.",
+        code: "https://github.com/Cenora6/Your-Games-Database",
+        live: "https://cenora6.github.io/Your-Games-Database/"
+    }
 ];
 
 const projectsDetails_pl = [
@@ -263,6 +276,15 @@ const projectsDetails_pl = [
         code: "https://github.com/Cenora6/BestShop_WS_first",
         live: "https://cenora6.github.io/BestShop_WS_first/"
     },
+
+    {
+        image: [mobile13, desktop13],
+        details: "HTML5, SASS, React (Hooks)",
+        language: [english],
+        description: "Baza danych zawierająca informacje o grach komputerowych wykonana w stylu pixel art. Strona używa informacji ze strony IGDB. Podczas szukania gier, możesz posłuchać muzyki retro, by wczuć się w klimat.",
+        code: "https://github.com/Cenora6/Your-Games-Database",
+        live: "https://cenora6.github.io/Your-Games-Database/"
+    }
 ];
 
 export { projects, projectsDetails_pl, projectsDetails_en };
