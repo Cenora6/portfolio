@@ -11,6 +11,9 @@ import project10 from "./../assets/projects/project10.png";
 import project11 from "./../assets/projects/project11.png";
 import project12 from "./../assets/projects/project12.png";
 import project13 from "./../assets/projects/project13.png";
+import project14 from "./../assets/projects/project14.png";
+import project15 from "./../assets/projects/project15.png";
+import project16 from "./../assets/projects/project16.png";
 
 import desktop2 from "./../assets/projects/desktop2.png";
 import desktop3 from "./../assets/projects/desktop3.png";
@@ -24,6 +27,9 @@ import desktop10 from "./../assets/projects/desktop10.png";
 import desktop11 from "./../assets/projects/desktop11.png";
 import desktop12 from "./../assets/projects/desktop12.png";
 import desktop13 from "./../assets/projects/desktop13.png";
+import desktop14 from "./../assets/projects/desktop14.png";
+import desktop15 from "./../assets/projects/desktop15.png";
+import desktop16 from "./../assets/projects/desktop16.png";
 
 import mobile1 from "./../assets/projects/mobile1.png";
 import mobile2 from "./../assets/projects/mobile2.png";
@@ -33,6 +39,8 @@ import mobile6 from "./../assets/projects/mobile6.png";
 import mobile7 from "./../assets/projects/mobile7.png";
 import mobile11 from "./../assets/projects/mobile11.png";
 import mobile13 from "./../assets/projects/mobile13.png";
+import mobile14 from "./../assets/projects/mobile14.png";
+import mobile15 from "./../assets/projects/mobile15.png";
 
 import polish from "./../assets/languages/polish.png";
 import english from "./../assets/languages/english.png";
@@ -51,7 +59,10 @@ const projects = {
         project10,
         project11,
         project12,
-        project13
+        project13,
+        project14,
+        project15,
+        project16
     ],
 };
 
@@ -168,6 +179,32 @@ const projectsDetails_en = [
         description: "A video game database, where you can find informations about all the games. This website is using IGDB database. You can also listen to a retro music while searching for the games.",
         code: "https://github.com/Cenora6/Your-Games-Database",
         live: "https://cenora6.github.io/Your-Games-Database/"
+    },
+    {
+        image: [mobile14, desktop14],
+        details: "HTML5, CSS, Bootstrap 4, Vanilla JavaScript",
+        language: [english],
+        description: "The idea for the project was based on the interests in South Korean culture. If you are interested in discovering South Korea, on this website you can find the basic informations about Korean buildings, historical treasure, popular food and drinks, interesting facts and numbers related to South Korea and read about music, sports and festivals.",
+        code: "https://github.com/Cenora6/DiscoverKorea",
+        live: "https://cenora6.github.io/DiscoverKorea/"
+    },
+
+    {
+        image: [mobile15, desktop15],
+        details: "HTML5, SASS, React, TypeScript",
+        language: [english],
+        description: "The 'Recipes' World' website gathers recipes using a free The Meal Database. The recipes are divided based on their name, category, ingredients and area. The blog section consists of example posts with photos, dates, post's tag, the options to like or share the blog post and the comments section with example comments. ",
+        code: "https://github.com/Cenora6/Recipes-World",
+        live: "https://cenora6.github.io/Recipes-World/"
+    },
+
+    {
+        image: [desktop16],
+        details: "HTML5, CSS, TypeScript",
+        language: [english],
+        description: "A simple virtual piano which can be used to play a music on virtual piano's keyboard. Record button which records the music played on the piano and a play button which enable listening to the recorder music were added as an additional feature.",
+        code: "https://github.com/Cenora6/Virtual-Piano",
+        live: "https://cenora6.github.io/Virtual-Piano/"
     }
 ];
 
@@ -284,6 +321,32 @@ const projectsDetails_pl = [
         description: "Baza danych zawierająca informacje o grach komputerowych wykonana w stylu pixel art. Strona używa informacji ze strony IGDB. Podczas szukania gier, możesz posłuchać muzyki retro, by wczuć się w klimat.",
         code: "https://github.com/Cenora6/Your-Games-Database",
         live: "https://cenora6.github.io/Your-Games-Database/"
+    },
+    {
+        image: [mobile14, desktop14],
+        details: "HTML5, CSS, Bootstrap 4, Vanilla JavaScript",
+        language: [english],
+        description: "Strona zbudowana przy użyciu Bootstrap 4 zawierająca informacje o Korei Południowej - o najważniejszych zabytkach, jedzeniu, liczbach, sportach, muzyce i festivalach.",
+        code: "https://github.com/Cenora6/DiscoverKorea",
+        live: "https://cenora6.github.io/DiscoverKorea/"
+    },
+
+    {
+        image: [mobile15, desktop15],
+        details: "HTML5, SASS, React, TypeScript",
+        language: [english],
+        description: "Strona 'Świat Przepisów' wykorzystuję bazę danych The Meal Database. Przepisy można filtrować pod względem użytych składników, kategorii, nazwy oraz kraju. Strona zawiera również blog, gdzie mogą byc zamieszczone i komentowane wpisy. ",
+        code: "https://github.com/Cenora6/Recipes-World",
+        live: "https://cenora6.github.io/Recipes-World/"
+    },
+
+    {
+        image: [desktop16],
+        details: "HTML5, CSS, TypeScript",
+        language: [english],
+        description: "Proste wirtualne pianino, na którym można wygrywać różne dźwięki, a także nagrywać zagraną melodię przy użyciu mikrofonu komputera.",
+        code: "https://github.com/Cenora6/Virtual-Piano",
+        live: "https://cenora6.github.io/Virtual-Piano/"
     }
 ];
 
