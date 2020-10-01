@@ -100,6 +100,7 @@
             bottom: 2rem;
             height: 20rem;
             z-index: 0;
+            top: 0;
 
             @include phone {
               bottom: auto;

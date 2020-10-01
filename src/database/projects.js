@@ -14,6 +14,7 @@ import project13 from "./../assets/projects/project13.png";
 import project14 from "./../assets/projects/project14.png";
 import project15 from "./../assets/projects/project15.png";
 import project16 from "./../assets/projects/project16.png";
+import project17 from "./../assets/projects/project17.png";
 
 import desktop2 from "./../assets/projects/desktop2.png";
 import desktop3 from "./../assets/projects/desktop3.png";
@@ -30,6 +31,7 @@ import desktop13 from "./../assets/projects/desktop13.png";
 import desktop14 from "./../assets/projects/desktop14.png";
 import desktop15 from "./../assets/projects/desktop15.png";
 import desktop16 from "./../assets/projects/desktop16.png";
+import desktop17 from "./../assets/projects/desktop17.png";
 
 import mobile1 from "./../assets/projects/mobile1.png";
 import mobile2 from "./../assets/projects/mobile2.png";
@@ -41,6 +43,7 @@ import mobile11 from "./../assets/projects/mobile11.png";
 import mobile13 from "./../assets/projects/mobile13.png";
 import mobile14 from "./../assets/projects/mobile14.png";
 import mobile15 from "./../assets/projects/mobile15.png";
+import mobile17 from "./../assets/projects/mobile17.png";
 
 import polish from "./../assets/languages/polish.png";
 import english from "./../assets/languages/english.png";
@@ -62,7 +65,8 @@ const projects = {
         project13,
         project14,
         project15,
-        project16
+        project16,
+        project17
     ],
 };
 
@@ -205,6 +209,15 @@ const projectsDetails_en = [
         description: "A simple virtual piano which can be used to play a music on virtual piano's keyboard. Record button which records the music played on the piano and a play button which enable listening to the recorder music were added as an additional feature.",
         code: "https://github.com/Cenora6/Virtual-Piano",
         live: "https://cenora6.github.io/Virtual-Piano/"
+    },
+
+    {
+        image: [mobile17, desktop17],
+        details: "HTML5, SASS, React, TypeScript",
+        language: [english],
+        description: "'Today I Want To Watch' is a website which was created for those who have a hard time finding the perfect movie or tv series to watch. By choosing the movie's or tv show's genre or keyword, the website chooses a random movie/tv show and shows its details (like poster, cast, description, genres, release year or seasons, links to imdb and The Movie Database) which help you make the decision what to watch. You can either try to find another movie or change the searching options and try again!",
+        code: "https://github.com/Cenora6/today-i-want-to-watch",
+        live: "https://cenora6.github.io/today-i-want-to-watch/"
     }
 ];
 
@@ -347,6 +360,15 @@ const projectsDetails_pl = [
         description: "Proste wirtualne pianino, na którym można wygrywać różne dźwięki, a także nagrywać zagraną melodię przy użyciu mikrofonu komputera.",
         code: "https://github.com/Cenora6/Virtual-Piano",
         live: "https://cenora6.github.io/Virtual-Piano/"
+    },
+
+    {
+        image: [mobile17, desktop17],
+        details: "HTML5, SASS, React, TypeScript",
+        language: [english],
+        description: "'Today I Want To Watch' została stworzona dla tych, którzy mają zawsze problem znaleźć interesujący film czy serial do obejrzenia. Poprzez wybór gatunku lub słów kluczowych związanych z filmem lub serialem, aplikacja wybiera losowo jeden tytuł i pokazuje jego plakat, obsadę, opis, gatunek, rok wydania, a także odnośniki do stron imdb oraz tmdb. Jeśli wybrany tytuł nie trafi w gust, wystarczy ponowić wyszukiwanie lub zmienić jego parametry.",
+        code: "https://github.com/Cenora6/today-i-want-to-watch",
+        live: "https://cenora6.github.io/today-i-want-to-watch/"
     }
 ];
 
