@@ -145,7 +145,7 @@ const projectsDetails_en = [
         image: [desktop9],
         details: "HTML5, CSS, Vanilla JavaScript",
         language: [english],
-        description: "Help the kitty eat all the cupcakes! :) A simple game, where you collect cupcakes using keyboard's arrows.",
+        description: "A simple game app, in which you control a cat using the keyboard's arrows and try to gather all the cupcakes.",
         code: "https://github.com/Cenora6/Furry-Game",
         live: "https://cenora6.github.io/Furry-Game/"
     },
@@ -296,7 +296,7 @@ const projectsDetails_pl = [
         image: [desktop9],
         details: "HTML5, CSS, Vanilla JavaScript",
         language: [english],
-        description: "Pomóż kotkowi zjeść wszystkie babeczki. Prosta gra, gdzie zbierasz babeczki używając strzałek.",
+        description: "Prosta gra, w której kontrolujesz kota używając klawiszy strzałem i próbujesz zebrać jak największą ilość babeczek.",
         code: "https://github.com/Cenora6/Furry-Game",
         live: "https://cenora6.github.io/Furry-Game/"
     },

@@ -1,48 +1,15 @@
-import React, {Component} from 'react';
-import Contact from "./Contact";
-import selfPhoto from "./../assets/photo.png";
-import border from "./../assets/border.png";
-import LanguageSelector from "../language/LanguageSelector";
-import {Text} from "./../language/LanguageProvider"
+import React from 'react';
+import Contact from "../Contact/Contact";
+import selfPhoto from "../../assets/photo.png";
+import border from "../../assets/border.png";
+import LanguageSelector from "../../language/LanguageSelector";
+import {Text} from "../../language/LanguageProvider"
+import BackButton from "../BackButton/BackButton";
 
-class About extends Component {
-    state = {
-        back: false,
-        clicked: false,
-        width: window.innerWidth,
-    };
+const about = (props) => {
 
-    componentDidMount() {
-        window.addEventListener('resize', this.handleWindowSizeChange);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange);
-    }
-
-    handleWindowSizeChange = () => {
-        this.setState({
-            width: window.innerWidth
-        });
-    };
-
-    goBack = () => {
-        this.setState({
-            back: !this.state.back,
-        })
-    };
-
-    goHome = () => {
-        this.setState({
-            clicked: !this.state.clicked,
-        });
-        setTimeout(() => {
-            this.props.history.push('/');
-        },3000)
-    };
-
-    render() {
-        const { back, clicked, width } = this.state;
+        const { hovered, clicked, width, goHome, hoverBack } = props;
+    console.log(clicked)
         return (
             <>
                 <Contact/>
@@ -107,14 +74,12 @@ class About extends Component {
                             </p>
                         </div>
                     </div>
-                    <div className={`go--back ${back ? "back" : "stay"} ${clicked ? "fade--out" : "fade--in"}`}
-                         onClick={this.goHome} onMouseEnter={this.goBack} onMouseLeave={this.goBack}>
-                        <span className={`${back ? "back"  : "stay"}`}></span>
-                    </div>
+
+                    <BackButton hovered={hovered} clicked={clicked} goHome={goHome} hover={hoverBack}/>
+
                 </section>
             </>
         )
-    }
 }
 
-export default About;
+export default about;
